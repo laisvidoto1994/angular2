@@ -1,9 +1,11 @@
 # angular2
 
 
-Exemplo com anglar ->
+Exemplo com angular ->
 https://www.youtube.com/watch?v=XxPjcMTZz5w&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=3
 
+exemplo usando rotas-> 
+http://clubedosgeeks.com.br/programacao/angularjs/usando-rotas-em-angular-2
 
 //angular cli
 
