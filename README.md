@@ -1,27 +1,52 @@
-# ProjetoProjeto
+# angular2
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
 
-## Development server
+Exemplo com anglar ->
+https://www.youtube.com/watch?v=XxPjcMTZz5w&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=3
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+//angular cli
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+npm install -g @angular/cli
 
-## Build
+//Typescript
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+npm install -g typescript
 
-## Running unit tests
+//testar se esta com o angular cli instalado e ver á versão do angular e do node instalado
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ng v
 
-## Running end-to-end tests
+//comando de criação de um projeto
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+ng new projeto-projeto
 
-## Further help
+//redirecione para á pasta do novo projeto criado
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+cd projeto-projeto
+
+//para testar á aplicação
+
+ng serve --open
+
+//criação de componente
+
+ng g component meu-primeiro2
+
+
+//Criação de modulos
+
+ng g module cursos
+
+
+mostra as atualizações->
+http://es6-features.org/#Constants
+
+mostra componentes prontos do botstrap->
+https://bootswatch.com/journal/
+
+
+# i
+app.module.ts -> é á raiz do projeto
+
+
