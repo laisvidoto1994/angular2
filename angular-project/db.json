@@ -1,0 +1,52 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Lais",
+      "nascimento": 24,
+      "email": "lais@gmail.com",
+      "cpf": "12345678910",
+      "telefone": 88888888
+    },
+    {
+      "id": 2,
+      "nome": "Lucas",
+      "nascimento": 40,
+      "email": "lucas@gmail.com",
+      "cpf": "12345678912",
+      "telefone": 88888887
+    },
+    {
+      "id": 3,
+      "nome": "Matheus",
+      "nascimento": 28,
+      "email": "matheus@gmail.com",
+      "cpf": "12345678913",
+      "telefone": 88888886
+    },
+    {
+      "id": 4,
+      "nome": "Mario",
+      "nascimento": 22,
+      "email": "mario@gmail.com",
+      "cpf": "12345678914",
+      "telefone": 88888885
+    },
+    {
+      "id": 5,
+      "nome": "Laura",
+      "nascimento": 18,
+      "email": "laura@gmail.com",
+      "cpf": "12345678915",
+      "telefone": 88888886
+    },
+    {
+      "id": 6,
+      "nome": "João",
+      "nascimento": 32,
+      "email": "joao@gmail.com",
+      "cpf": "12345678916",
+      "telefone": 88888887
+    }
+  ]
+}
