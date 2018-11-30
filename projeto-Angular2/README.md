@@ -40,6 +40,10 @@ ng g component meu-primeiro2
 
 ng g module cursos
 
+//criar um serviço
+ng g serve cursosService
+
+
 
 mostra as atualizações->
 http://es6-features.org/#Constants
