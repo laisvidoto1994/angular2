@@ -1,0 +1,62 @@
+<!-- Titulo  -->
+<div class="wrapper">
+  <div class="col-md-12">
+    <div style="display: grid; grid-template-columns: 80% 3%">
+      <h1>Cadastro de Usuário</h1>
+    </div>
+    <br>
+  </div>
+
+  <form class="row" #formCadastro="ngForm" (ngSubmit)="onSubmit(formCadastro)">
+
+    <div class="form-check mx-sm-4 mb-3">
+
+      <!-- nome -->
+      <div class="form-group">
+        <label for="inputNome">nome</label>
+        <br>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="nome" ([ngModel])="cliente.nome" required>
+      </div>
+
+      <div *ngIf="!nome.valid">
+        nome é obrigatório!
+      </div>
+
+      <!-- idade -->
+      <div class="form-group">
+        <label for="inputIdade">idade</label>
+        <br>
+        <input type="text" class="form-control" id="idade" name="idade" placeholder="idade" ([ngModel])="cliente.idade" required>
+      </div>
+
+      <!-- cpf -->
+      <div class="form-group">
+        <label for="inputCpf">cpf</label>
+        <br>
+        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="cpf" ([ngModel])="cliente.cpf" required>
+      </div>
+
+      <!-- telefone -->
+      <div class="form-group">
+        <label for="inputTelefone">telefone</label>
+        <br>
+        <input type="tel" class="form-control"   id="telefone" name="telefone" placeholder="telefone" ([ngModel])="cliente.telefone"
+          required>
+      </div>
+
+      <!-- email -->
+      <div class="form-group">
+        <label for="exampleInputEmail1">E-mail</label>
+        <br>
+        <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" ([ngModel])="cliente.email" required>
+      </div>
+
+      <div class="form-group">
+        <!-- Botão cadastro -->
+        <button class="btn btn-outline-secondary" type="submit" routerLink="">Cancelar</button>
+        <button class="btn btn-outline-primary" type="submit" (click)="cadastro(formCadastro)">Cadastrar</button>
+      </div>
+
+    </div>
+  </form>
+</div>

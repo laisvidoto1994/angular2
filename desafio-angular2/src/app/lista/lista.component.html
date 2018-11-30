@@ -1,0 +1,92 @@
+<!--   -->
+<div class="wrapper">
+  <div class="col-md-12">
+    <div style="display: grid; grid-template-columns: 80% 3%">
+      <h1>Lista de Contatos de Clientes</h1>
+      <a href="#" [routerLink]="['cadastro']" class="btn btn-outline-primary">+</a>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- Menssagem de erro, quando não tiver dados -->
+    <div style="text-align: center" *ngIf="clientes.length < 1">
+      <a href="#">
+        <i class="fa fa-info-circle fa-2x"></i>
+      </a>
+      <br>
+      <label> nenhum usuario cadastrado!</label>
+    </div>
+
+    <!-- dados -->
+    <div>
+
+      <div *ngIf="clientes.length > 0">
+        <form class="form-inline my-2 my-lg-0">
+          <input #IdCliente class="form-control mr-sm-2" type="text" placeholder="buscar por nome ou cpf">
+          <a class="btn btn-outline-secondary" type="submit" [routerLink]="['/detalhe',IdCliente.value]">Search</a>
+        </form>
+      </div>
+
+      <br>
+
+      <!-- Listagem de clientes -->
+      <table class="table table-striped">
+        <tr class="table-dark">
+          <th>#</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Idade</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Opções</th>
+        </tr>
+        <tr *ngFor="let cliente of clientes" [routerLink]="['/detalhe',cliente.id]">
+          <td>{{cliente.id}}</td>
+          <td>{{cliente.nome}}</td>
+          <td>{{cliente.cpf}}</td>
+          <td>{{cliente.nascimento}}</td>
+          <td>{{cliente.email}}</td>
+          <td>{{cliente.telefone}}</td>
+          <td>
+            <!-- botões -->
+            <a href="#" (click)="excluir(cliente.id)" class="btn btn-outline-danger">
+              <i class="fa fa-trash"></i>
+            </a>
+            <a href="#" (click)="atualizar(cliente)" class="btn btn-outline-info">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </td>
+        </tr>
+      </table>
+
+
+      <div>
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link" href="#">&laquo;</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">4</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">5</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">&raquo;</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
