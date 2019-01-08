@@ -17,7 +17,7 @@ npm install -g typescript
 
 //testar se esta com o angular cli instalado e ver á versão do angular e do node instalado
 
-ng v
+ng -v
 
 //comando de criação de um projeto
 
