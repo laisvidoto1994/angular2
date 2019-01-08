@@ -14,12 +14,12 @@ Para estilizar as páginas foi utilizado o Framework [Bootswatch](https://bootsw
 
 Inicialmente é usar o comando:
 
-npm i
+#### npm i
 
 Posteriormente, para rodar a API deve utilizar o comando:
 
-json-server --watch db.json
+#### json-server --watch db.json
 
 Por fim deve utilizar o comando:
 
-ng serve
+#### ng serve
