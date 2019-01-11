@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
+exemplo de loiane-> 
+
+https://loiane.training/course/angular/?error=login
+
+https://www.youtube.com/watch?v=wBrIT2Z8t5I
+
+
 # Armazenamento de dados
 
 Os dados foram armazenados locamente utilizando a [API JSON-SERVER](https://github.com/typicode/json-server).
