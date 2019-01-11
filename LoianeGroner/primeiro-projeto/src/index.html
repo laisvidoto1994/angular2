@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+  <title>Primeiro Projeto</title>
+  <meta charset="utf-8">
+  <!-- deixa-lo disponivel para visualizar para tablets e smartfones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/app.css">
+
+  <!-- 1. load libraries -->
+  <script src="../node_modules/es6-shim/es6-shim.min.js"></script>
+  <script src="../node_modules/zone.js/dist/zone.js"></script>
+  <script src="../node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="../node_modules/systemjs/dist/system.min.js"></script>
+
+  <!-- 2. configuração systemjs -->
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('app').catch(function (error) {
+      console.error(error);
+    })
+  </script>
+
+</head>
+
+<!-- 3. renderizando a aplicação -->
+
+<body>
+  <!-- tag do componente principal da aplicação -->
+  <!-- my-app se encontra no componente app\app.component.ts -->
+  <my-app>Loading...</my-app>
+</body>
+
+</html>
