@@ -14,7 +14,7 @@ export class ServicoService {
 
   post(formDado) {
 
-     
+
   }
 
 }
