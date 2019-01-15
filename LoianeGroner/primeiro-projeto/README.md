@@ -29,6 +29,8 @@ npm install -g typescript
 
 #### ng serve
 
+# Descrição de comandos
+
 > angular cli  
 ### npm install -g @angular/cli
 
