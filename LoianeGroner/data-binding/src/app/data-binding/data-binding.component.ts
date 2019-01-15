@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 
 @Component({
   selector: 'app-data-binding',
@@ -16,7 +16,7 @@ export class DataBindingComponent implements OnInit {
 
   valorAtual: string = "";
   valorSalvo: string = "";
-
+   
   getCurtirCurso() {
     return true;
   }
