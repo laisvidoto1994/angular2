@@ -1,3 +1,12 @@
+#Passos para executar o projeto
+1º) abra o terminal, e execulte o seguinte comando abaixo:
+
+#### npm install
+
+2º) em seguida, execulte o comando abaixo:
+
+#### ng serve
+
 # DataBinding
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
