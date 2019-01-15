@@ -86,3 +86,11 @@
 </section> 
 
 <app-meu-form></app-meu-form>
+
+<section class="input-properties">
+  <article>
+    <h3>Input/Output Properties</h3>
+    <app-curso [nome]="nomeDoCurso"></app-curso>
+    <contador [valor]="valorInicial" (mudouValor)="onValorMudou($event)"></contador>
+  </article>
+</section>    

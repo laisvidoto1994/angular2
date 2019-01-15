@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core'; 
+
+import { Component, OnInit } from '@angular/core';
+
+import { OutputPropertyComponent } from './output-property.component';
+import { InputPropertyComponent } from './../input-property/input-property.component';
 
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
-  styleUrls: ['./data-binding.component.css']
+  styleUrls: ['./data-binding.component.css'] 
 })
 
 export class DataBindingComponent implements OnInit {
@@ -16,7 +20,9 @@ export class DataBindingComponent implements OnInit {
 
   valorAtual: string = "";
   valorSalvo: string = "";
-   
+  nomeDoCurso: string = "Angular";
+  valorInicial: number = 10;
+
   getCurtirCurso() {
     return true;
   }
@@ -39,6 +45,11 @@ export class DataBindingComponent implements OnInit {
 
   onMouseOverOut() {
     this.isMouseOver = !this.isMouseOver;
+  }
+
+  onValorMudou(event){
+    alert(event.novoValor);
+
   }
 
   constructor() { }
