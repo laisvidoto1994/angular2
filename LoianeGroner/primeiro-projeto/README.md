@@ -11,10 +11,23 @@ mostra componentes prontos do botstrap->
 https://bootswatch.com/journal/
 
 pre-requisitos:
+
 baixar o nodejs para a maquina
+
 npm install -g @angular/cli
+
 npm install -g typescript	
- 
+
+
+ # Passos para executar o projeto
+
+1º) abra o terminal, e execulte o seguinte comando abaixo:
+
+#### npm install
+
+2º) em seguida, execulte o comando abaixo:
+
+#### ng serve
 
 > angular cli  
 ### npm install -g @angular/cli
