@@ -1,4 +1,5 @@
-#Passos para executar o projeto
+# Passos para executar o projeto
+
 1º) abra o terminal, e execulte o seguinte comando abaixo:
 
 #### npm install
