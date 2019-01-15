@@ -1,0 +1,91 @@
+<section class="property-binding">
+
+  <article>
+    <h3>Interpolação</h3>
+    <!-- url declarada no arquivo data-binding.component.ts, ela tem que ter o mesmo nome para funcioar -->
+    <p> String renderizada com Interpolação: {{ url }} </p>
+    <!-- expreções matematicas -->
+    <p> Resultado da soma de 1 + 1 = {{ 1 + 1 }} </p>
+    <!-- expreções matematicas + chamadas de funções -->
+    <p> Resultado da soma de 1 + 1 ,não é {{ 1 + 1 + getValor() }} </p>
+    <p>Curso Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+  </article>
+
+  <article>
+    <h3>Property Binding</h3>
+    <img src="{{ urlImagem }}">
+    <img [src]="urlImagem">
+    <img bind-src="urlImagem">
+  </article>
+
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe:
+      <select #classeSelect (change)="0">
+        <option value="alert-success">success</option>
+        <option value="alert-info">info</option>
+        <option value="alert-warning">warning</option>
+        <option value="alert-danger">danger</option>
+      </select>
+      <br>
+      <br>
+
+      <div class="alert {{ classeSelect.value }}" role="alert">
+        texto colorido coforme o valor do combobox.
+      </div>
+
+      <!-- verificação se á opção selecionada é a mesma do tipo de alerta abaixo -->
+      <div class="alert" role="alert" [class.alert-success]="classeSelect.value == 'alert-success' ">
+        Sucesso
+      </div>
+      <div class="alert" role="alert" [class.alert-info]="classeSelect.value == 'alert-info' ">
+        Informação
+      </div>
+      <div class="alert" role="alert" [class.alert-warning]="classeSelect.value == 'alert-warning' ">
+        Alerta
+      </div>
+      <div class="alert" role="alert" [class.alert-danger]="classeSelect.value == 'alert-danger' ">
+        Erro
+      </div>
+
+      <!--
+        ? 'block'-> caso de sucesso apareça o block
+        : 'none' -> caso de erro apareça o none
+        -->
+      <div class="alert alert-danger" role="alert" [style.display]="classeSelect.value == 'alert-danger' ? 'block' : 'none' ">
+        esse texto só aparece em caso de erro.
+      </div>
+
+    </div>
+  </article>
+
+</section>
+
+
+<section class="event-binding">
+
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button class="btn btn-primary" (click)="botaoClicado()">Me Clique!</button>
+      <br>
+      <br>
+      <input type="text" 
+        (keyup)="onKeyUp($event)" 
+        (keyup.enter)="salvarValor(campoInput.value)" 
+        (blur)="salvarValor($event.target.value)"
+        #campoInput />
+      <p> valor atual:{{ valorAtual }} </p>
+      <p> valor salvo:{{ valorSalvo }} </p><br><br>
+      <span 
+      (mouseover)="onMouseOverOut()" 
+      (mouseout)="onMouseOverOut()" 
+      [class.hightlight]="isMouseOver"
+      >
+      passe o mouse sobre min!
+    </span>
+    </div>
+  </article>
+
+</section>
