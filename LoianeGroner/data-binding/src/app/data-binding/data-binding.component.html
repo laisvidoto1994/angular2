@@ -9,6 +9,7 @@
     <!-- expreções matematicas + chamadas de funções -->
     <p> Resultado da soma de 1 + 1 ,não é {{ 1 + 1 + getValor() }} </p>
     <p>Curso Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+    <br>
   </article>
 
   <article>
@@ -16,6 +17,8 @@
     <img src="{{ urlImagem }}">
     <img [src]="urlImagem">
     <img bind-src="urlImagem">
+    <br>
+    <br>
   </article>
 
   <article>
@@ -29,25 +32,16 @@
         <option value="alert-danger">danger</option>
       </select>
       <br>
-      <br>
 
       <div class="alert {{ classeSelect.value }}" role="alert">
         texto colorido coforme o valor do combobox.
       </div>
 
       <!-- verificação se á opção selecionada é a mesma do tipo de alerta abaixo -->
-      <div class="alert" role="alert" [class.alert-success]="classeSelect.value == 'alert-success' ">
-        Sucesso
-      </div>
-      <div class="alert" role="alert" [class.alert-info]="classeSelect.value == 'alert-info' ">
-        Informação
-      </div>
-      <div class="alert" role="alert" [class.alert-warning]="classeSelect.value == 'alert-warning' ">
-        Alerta
-      </div>
-      <div class="alert" role="alert" [class.alert-danger]="classeSelect.value == 'alert-danger' ">
-        Erro
-      </div>
+      <div class="alert" role="alert" [class.alert-success]="classeSelect.value == 'alert-success' "> Sucesso </div>
+      <div class="alert" role="alert" [class.alert-info]="classeSelect.value == 'alert-info' "> Informação </div>
+      <div class="alert" role="alert" [class.alert-warning]="classeSelect.value == 'alert-warning' "> Alerta </div>
+      <div class="alert" role="alert" [class.alert-danger]="classeSelect.value == 'alert-danger' "> Erro </div>
 
       <!--
         ? 'block'-> caso de sucesso apareça o block
@@ -75,15 +69,15 @@
         #campoInput />
       <p> valor atual:{{ valorAtual }} </p>
       <p> valor salvo:{{ valorSalvo }} </p>
-      <br>
-      <br>
       <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.hightlight]="isMouseOver">
         passe o mouse sobre min!
       </span>
+      <br>
+      <br>
     </div>
   </article>
 
-</section> 
+</section>
 
 <app-meu-form></app-meu-form>
 
@@ -93,4 +87,4 @@
     <app-curso [nome]="nomeDoCurso"></app-curso>
     <contador [valor]="valorInicial" (mudouValor)="onValorMudou($event)"></contador>
   </article>
-</section>    
+</section>
