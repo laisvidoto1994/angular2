@@ -81,8 +81,40 @@ Inicialmente é usar o comando:
 Por fim deve utilizar o comando:
 #### ng serve
 
+# evento(hooks)
+
+antes do ngOnInit e quando o valor property-binding é atualizado
+
+#### ngOnChanges
+
+quando componente é inicializado
+
+#### ngOnInit
 
 
+a cada ciclo de verificação de mudanças
+
+##### ngDoCheck
+ 
+ depois de inserir conteudo externo via view
+ 
+ #### ngAfterContentInit
+ 
+a cada verificação de conteudo inserido
+
+#### ngAfterContentChecked
+
+
+a cada veirificação de conteudo/conteudo filho
+
+#### ngAfterViewChecked
+
+
+antes da diretiva/component ser destruido
+
+#### ngOnDestroy
+
+ 
 # PrimeiroProjeto
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
