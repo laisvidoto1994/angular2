@@ -1,28 +1,62 @@
 <section class="property-binding">
 
   <article>
+
     <h3>Interpolação</h3>
-    <!-- url declarada no arquivo data-binding.component.ts, ela tem que ter o mesmo nome para funcioar -->
-    <p> String renderizada com Interpolação: {{ url }} </p>
-    <!-- expreções matematicas -->
-    <p> Resultado da soma de 1 + 1 = {{ 1 + 1 }} </p>
-    <!-- expreções matematicas + chamadas de funções -->
-    <p> Resultado da soma de 1 + 1 ,não é {{ 1 + 1 + getValor() }} </p>
-    <p>Curso Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+
+    <div class="card w-50 text-bold bg-transparent border-primary mx-1">
+      <div class="card-header">Interpolação</div>
+      <div class="card-body">
+        <h5 class="card-title">exemplos:</h5>
+        <!-- https://www.youtube.com/watch?v=rlVxG2lG1Tk -->
+        <!-- url declarada no arquivo data-binding.component.ts, ela tem que ter o mesmo nome para funcioar -->
+        <p class="card-text">String renderizada com Interpolação: {{ url }}</p>
+        <!-- expreções matematicas -->
+        <p class="card-text"> Resultado da soma de 1 + 1 = {{ 1 + 1 }} </p>
+        <!-- expreções matematicas + chamadas de funções -->
+        <p class="card-text"> Resultado da soma de 1 + 1 ,não é {{ 1 + 1 + getValor() }} </p>
+        <p class="card-text">Curso Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+
+      </div>
+    </div>
     <br>
   </article>
 
   <article>
     <h3>Property Binding</h3>
-    <img src="{{ urlImagem }}">
-    <img [src]="urlImagem">
-    <img bind-src="urlImagem">
-    <br>
+    <!-- https://www.youtube.com/watch?v=3koyM6kzWGQ&t=21s -->
+
+    <div class="card-group">
+      <div class="card w-50 text-white bg-secondary border-primary mx-1">
+        <img class="card-img-top" src="{{ urlImagem }}">
+        <div class="card-body">
+          <h5 class="card-title">Título do card1</h5>
+          <p class="card-text">descrição do card1</p>
+        </div>
+      </div>
+
+      <div class="card w-50 text-white bg-secondary border-primary mx-1">
+        <img class="card-img-top" [src]="urlImagem">
+        <div class="card-body">
+          <h5 class="card-title">Título do card2</h5>
+          <p class="card-text">descrição do card2</p>
+        </div>
+      </div>
+
+      <div class="card w-50 text-white bg-secondary border-primary mx-1">
+        <img class="card-img-top" bind-src="urlImagem">
+        <div class="card-body">
+          <h5 class="card-title">Título do card3</h5>
+          <p class="card-text">descrição do card3</p>
+        </div>
+      </div>
+    </div>
     <br>
   </article>
 
   <article>
     <h3>Class e Style Binding</h3>
+    <!-- https://www.youtube.com/watch?v=3koyM6kzWGQ&t=21s -->
     <div>
       Selecione uma classe:
       <select #classeSelect (change)="0">
@@ -56,19 +90,34 @@
 
 </section>
 
-
 <section class="event-binding">
 
   <article>
     <h3>Event Binding</h3>
+    <!-- https://www.youtube.com/watch?v=WF28rLBangw -->
     <div>
-      <button class="btn btn-primary" (click)="botaoClicado()">Me Clique!</button>
+      <button class="btn btn-outline-primary" (click)="botaoClicado()">
+        Me Clique!
+      </button>
       <br>
       <br>
+      <!-- 
+        keyup-> fica ouvindo quando termina de apertar uma tecla no teclado 
+        keyup.enter-> fica ouvindo apenas quando termina de apertar a tecla de enter
+        blur-> perdeu o foco, ou tirou o mouse de cima dele.
+       -->
       <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)" (blur)="salvarValor($event.target.value)"
         #campoInput />
+
       <p> valor atual:{{ valorAtual }} </p>
       <p> valor salvo:{{ valorSalvo }} </p>
+
+      <!-- 
+        mouseover-> evento que esculta quando colocamos o mouse em cima do texto
+        mouseout-> evento que esculta quando tiramos o mouse de cima do texto
+        class.hightlight-> é um tipo criado no arquivo de css,
+        ele só funciona se o isMouseOver for true
+       -->
       <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.hightlight]="isMouseOver">
         passe o mouse sobre min!
       </span>
@@ -84,7 +133,15 @@
 <section class="input-properties">
   <article>
     <h3>Input/Output Properties</h3>
-    <app-curso [nome]="nomeDoCurso"></app-curso>
-    <contador [valor]="valorInicial" (mudouValor)="onValorMudou($event)"></contador>
+    <!-- https://www.youtube.com/watch?v=G2cBpYZ0fzk -->
+    <app-input-property [nome]="nomeDoCurso">
+    </app-input-property>
+
+    <!-- o html do contador esta no propio arquivo do component -->
+    <!-- https://www.youtube.com/watch?v=UbSmzblc-qY -->
+    <app-output-property [valor]="valorInicial" (mudouValor)="onValorMudou($event)">
+    </app-output-property>
+    <br>
+    <br>
   </article>
 </section>

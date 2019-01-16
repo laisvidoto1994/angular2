@@ -1,22 +1,22 @@
 <section class="two-way-binding">
   <article>
 
-    <h3>two way data binding</h3> 
-    <div>
-      <input type="text" [value]="nome" (input)="nome = $event.target.value" />
-      <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
-      <input type="text" [(ngModel)]="nome">
-      <input type="text" bindon-ngModel="nome">
+    <h3>two way data binding</h3>
+    <!-- https://www.youtube.com/watch?v=7PI-2pvLTu8 -->
+    <div class="my-2">
+      <input type="text" class="mx-1" [value]="nome" (input)="nome = $event.target.value" />
+      <input type="text" class="mx-1" [ngModel]="nome" (ngModelChange)="nome = $event" />
+      <input type="text" class="mx-1" [(ngModel)]="nome">
+      <input type="text" class="mx-1" bindon-ngModel="nome">
 
       <p>Você digitou: {{ nome }}</p>
-    </div>
+    </div> 
 
-    <div>
-      <p>Meu nome é: {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos!</p>
-      <input type="text" [(ngModel)]="pessoa.nome" />
-      <input type="text" [(ngModel)]="pessoa.idade" />
-    </div>
-    <br>
-    
-  </article> 
+    <div class="my-2">
+      <input type="text" class="mx-1" [(ngModel)]="pessoa.nome" />
+      <input type="text" class="mx-1" [(ngModel)]="pessoa.idade" />
+      <p>Meu nome é: {{ pessoa.nome }}, e tenho {{ pessoa.idade }} anos!</p>
+    </div> 
+
+  </article>
 </section>

@@ -1,14 +1,15 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
-    selector: 'contador',
+    selector: 'app-output-property',
     template: `
     <div>
-        <button type="button" class="btn btn-primary" (click)="decrementar()">-</button>
+        <button type="button" class="btn btn-secondary border-primary" (click)="decrementar()">-</button>
         <input type="text" [value]="valor" readonly>
-        <button type="button" class="btn btn-primary"  (click)="incrementar()">+</button>
+        <button type="button" class="btn btn-secondary border-primary"  (click)="incrementar()">+</button>
     </div>
     `,
+    //readonly-> não editavel
     //outputs:['mudouValor'],
 })
 
@@ -28,5 +29,4 @@ export class OutputPropertyComponent {
     }
 
     constructor() { }
-
 }
