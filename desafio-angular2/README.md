@@ -7,8 +7,11 @@
 
 2º) deixe o serviço disponivel com os dados
 #### json-server --watch db.json
+ 
 
-
+3º) start o projeto
+#### ng serve
+ 
 
 #### Tela Principal
 
@@ -18,9 +21,6 @@
 
 ![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/tela%20de%20cadastro.PNG)
 
-
-3º) start o projeto
-#### ng serve
 
 # AngularProject
 
