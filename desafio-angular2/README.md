@@ -9,6 +9,16 @@
 #### json-server --watch db.json
 
 
+
+#### Tela Principal
+
+![image](https://github.com/laisvidoto1994/AngularJs/blob/master/estudo/receita_de_bolo/img/tela%20inicial.PNG)
+
+#### Tela Cadastro
+
+![image](https://github.com/laisvidoto1994/AngularJs/blob/master/estudo/receita_de_bolo/img/tela%20inicial.PNG)
+
+
 3º) start o projeto
 #### ng serve
 
