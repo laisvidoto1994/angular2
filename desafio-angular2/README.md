@@ -12,11 +12,11 @@
 
 #### Tela Principal
 
-![image](https://github.com/laisvidoto1994/AngularJs/blob/master/estudo/receita_de_bolo/img/tela%20inicial.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/lista%20de%20contatos.PNG)
 
 #### Tela Cadastro
 
-![image](https://github.com/laisvidoto1994/AngularJs/blob/master/estudo/receita_de_bolo/img/tela%20inicial.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/tela%20de%20cadastro.PNG)
 
 
 3º) start o projeto
