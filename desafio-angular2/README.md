@@ -1,3 +1,17 @@
+# Start da Aplicação
+
+1º) Instale as dependências do package.json
+
+#### npm i
+
+
+2º) deixe o serviço disponivel com os dados
+#### json-server --watch db.json
+
+
+3º) start o projeto
+#### ng serve
+
 # AngularProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
