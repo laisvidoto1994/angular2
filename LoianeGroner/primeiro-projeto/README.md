@@ -50,13 +50,13 @@ npm install -g typescript
 ### ng serve --open
 
 > criação de componente  
-### ng g component meu-primeiro2
+### ng generate component meu-primeiro2
 
 > Criação de modulos  
-### ng g module cursos 
+### ng generate module cursos 
 
 > Criação de Serviços  
-### ng g service cursos 
+### ng generate service cursos 
 
 > é á raiz do projeto  
 ### app.module.ts 
