@@ -8,6 +8,13 @@
 
 #### ng serve
 
+
+#### Tela Principal
+
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/Loiane%20Groner/data-binding/tea%20inicial1.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/Loiane%20Groner/data-binding/tea%20inicial2.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/Loiane%20Groner/data-binding/tea%20inicial3.PNG)
+
 # DataBinding
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
