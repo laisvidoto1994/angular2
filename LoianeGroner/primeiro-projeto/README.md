@@ -29,6 +29,11 @@ npm install -g typescript
 
 #### ng serve
 
+
+### Tela Principal
+
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/Loiane%20Groner/data-binding/tea%20inicial1.PNG)
+
 # Descrição de comandos
 
 > angular cli  
