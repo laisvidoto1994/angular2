@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box; 
+  }
+/*** icones das redes sociais ***/
 .fa {
     padding: 20px;
     font-size: 30px;
@@ -6,11 +10,117 @@
     text-decoration: none;
     margin: 5px 2px;
     border-radius: 50%;
-    background: #0f0f0f;
+    background: #efbfa8;
     color: white;
   }
   
   .fa:hover {
       opacity: 0.7;
   }
- 
+  
+
+/*** Flex Container ***/
+.container {
+	width: 690px;
+    margin: 0 auto;    
+    border: 1px solid #ccc;
+	display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row; 
+}
+
+
+/*** Flex Item ***/
+.item {
+	/* O flex: 1; é necessário para que cada item se expanda ocupando o tamanho máximo do container. */
+    /* flex: 1 1 0%; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+	margin: 5px; 
+	text-align: center;
+	font-size: 1.5em;
+}
+
+
+/* 
+    Responsive layout - when the screen is less than 700px wide, make the two columns 
+    stack on top of each other instead of next to each other 
+*/
+@media (max-width: 690px) {
+    /* reescrevendo o container, para á nova resolução */
+    .container {   
+      flex-direction: column;
+    }
+  }
+
+  /* pega o ultimo item declarado no html, quando o pai é o container */
+ .item:last-child{ 
+ }
+
+ /* pega o primeiro item declarado no html, quando o pai é o container */
+ .item:first-child{ 
+ }
+
+
+  /* pega o segundo item declarado no html, quando o pai é o container */
+  .item:nth-child(2),.item:nth-child(4) ,.item:nth-child(6) { 
+  }
+
+   /* pega o segundo item declarado no html, quando o pai é o container */
+   .item:nth-child(3),.item:nth-child(5) { 
+  }
+
+  /* animação */
+  
+.animacaoDireita{
+    animation: moveInLeft 1s ease-out;
+}
+
+.animacaoEsquerda{
+    animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    
+    80% {
+      transform: translateX(10px);
+    }
+    
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    
+    80% {
+      transform: translateX(-10px);
+    }
+    
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+
+  
+.parallax {
+    background-image: url("../assets/images/imagem5.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  

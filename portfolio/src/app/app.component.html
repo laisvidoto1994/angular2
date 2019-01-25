@@ -1,62 +1,86 @@
 <app-cabecalho></app-cabecalho>
 
 <div style="text-align:center">
-  <h1>
+  <h1 class="animacaoDireita">
     Welcome to {{ title }}!
   </h1>
 </div>
+ 
+<div class="parallax"></div>
+<div style="height:200px;background-color:#efe7cc;font-size:26px">
 
+   <!-- Experiencia -->
+   <div>
+      <h3 id="experiencia">Experiencia</h3>
+      <ul>
+        <li>CSS3</li>
+        <li>HTML5</li>
+      </ul>
+    </div>
+
+</div>
+
+<div class="parallax"></div>
+<div style="height:200px;background-color:#efe7cc;font-size:26px">
+ 
 <!-- Educação -->
 <div>
-  <h3 style="transition: property duration delay timing-function;">Educação</h3>
-  <ul>
-    <li>2015 - 2018
-      <br><strong>Analise e Desenvolvimento de Sistemas (ADS)</strong></li>
-  </ul>
+    <h3 style="transition: property duration delay timing-function;">Educação</h3>
+    <ul>
+      <li>2015 - 2018
+        <br><strong>Analise e Desenvolvimento de Sistemas (ADS)</strong></li>
+    </ul>
+  </div>
 
 </div>
-
-<!-- Experiencia -->
-<div>
-  <h3 id="experiencia">Experiencia</h3>
-  <ul>
-    <li></li>
-  </ul>
-</div>
-
+<div class="parallax"></div>
 
 <!-- Lista de Contato/Linguagens -->
 <div>
   <h4>Lista</h4>
 
-  <div (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()">
+  <section class="container wrap" (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()">
 
-    <a href="https://www.linkedin.com/in/laís-vidoto-a0131b138" class="fa fa-linkedin-square">
-      <label style="font-size: 10px;" *ngIf="isMouseOver==true">Linkedin</label>
-    </a>
-    <a href="https://www.google.com/" class="fa fa-google">
-      <label style="font-size: 10px;" *ngIf="isMouseOver==true">Google</label>
-    </a>
-    <a href="https://github.com/laisvidoto1994" class="fa fa-github ">
-      <label style="font-size: 10px;" *ngIf="isMouseOver==true">Github</label>
-    </a>
-    <a href="https://bitbucket.org/laisvidoto/" class="fa fa-bitbucket-square ">
-      <label style="font-size: 10px;" *ngIf="isMouseOver==true">Bitbucket</label>
-    </a>
-    <a href="https://www.google.com/" class="fa fa-address-card-o ">
-      <label style="font-size: 10px;" *ngIf="isMouseOver==true">
-        <a href="mailto:lais.vidoto@gmail.com">E-Mail</a>
-      </label>
-    </a>
+    <div class="item">
+      <a href="https://www.linkedin.com/in/laís-vidoto-a0131b138" class="fa fa-linkedin-square">
+        <label style="font-size: 10px;" *ngIf="isMouseOver==true">Linkedin</label>
+      </a>
+    </div>
+    <div class="item">
+      <a href="https://www.google.com/" class="fa fa-google">
+        <label style="font-size: 10px;" *ngIf="isMouseOver==true">Google</label>
+      </a>
+    </div>
+    <div class="item">
+      <a href="https://github.com/laisvidoto1994" class="fa fa-github ">
+        <label style="font-size: 10px;" *ngIf="isMouseOver==true">Github</label>
+      </a>
+    </div>
+    <div class="item">
+      <a href="https://bitbucket.org/laisvidoto/" class="fa fa-bitbucket-square ">
+        <label style="font-size: 10px;" *ngIf="isMouseOver==true">Bitbucket</label>
+      </a>
+    </div>
+    <div class="item">
+      <a href="https://www.google.com/" class="fa fa-address-card-o ">
+        <label style="font-size: 10px;" *ngIf="isMouseOver==true">
+          <a href="mailto:lais.vidoto@gmail.com">E-Mail</a>
+        </label>
+      </a>
+    </div>
     <!-- Lista de Linguagens -->
-    <a href="https://pt.wikipedia.org/wiki/HTML5 " class="fa fa-html5 ">
-      <label style="font-size: 10px;" *ngIf="isMouseOver==true">HTML5</label>
-    </a>
-    <a href="https://pt.wikipedia.org/wiki/CSS3" class="fa fa-css3 ">
-      <label style="font-size: 10px;" *ngIf="isMouseOver==true">CSS3</label>
-    </a>
-  </div>
-
+    <div class="item">
+      <a href="https://pt.wikipedia.org/wiki/HTML5 " class="fa fa-html5 ">
+        <label style="font-size: 10px;" *ngIf="isMouseOver==true">HTML5</label>
+      </a>
+    </div>
+    <div class="item">
+      <a href="https://pt.wikipedia.org/wiki/CSS3" class="fa fa-css3 ">
+        <label style="font-size: 10px;" *ngIf="isMouseOver==true">CSS3</label>
+      </a>
+    </div>
+  </section>
 </div>
+
 
 <router-outlet></router-outlet>
