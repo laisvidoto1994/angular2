@@ -26,14 +26,15 @@ Os dados foram armazenados locamente utilizando a [API JSON-SERVER](https://gith
 
 Para estilizar as páginas foi utilizado o Framework [Bootswatch](https://bootswatch.com/).
 
+#### Tela Principal
+
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/inicial.PNG)
+
 
 #### Tela Cadastro
 
 ![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/cadastro.PNG)
 
-#### Tela Principal
-
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/inicial.PNG)
 
 #### Tela Detalhe
 
