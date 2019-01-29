@@ -2,26 +2,36 @@
 <table class="table table-striped text-center">
   <thead>
     <tr class="table-active">
-      <th scope="col">Nome</th>
-      <th scope="col">Telefone</th>
-      <th scope="col">E-mail</th>
-      <th scope="col">Ações</th>
+      <th scope="col">#</th>
+      <th scope="col">Produto</th>
+      <th scope="col">Marca</th>
+      <th scope="col">ncm</th>
+      <th scope="col">Codigo Cest</th>
+      <th scope="col">Custo da CX ou UNID</th>
+      <th scope="col">Codigo Ean</th>
+      <th scope="col">Codigo Dum</th>
+      <th scope="col">status</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let client of clients">
-      <th>{{client.nome}}</th>
-      <td>{{client.telefone}}</td>
-      <td>{{client.email}}</td>
+    <tr *ngFor="let produto of produtos">
+      <th>{{produto.id}}</th> 
+      <th>{{produto.nomeProduto}}</th> 
+      <th>{{produto.marca}}</th> 
+      <th>{{produto.ncm}}</th> 
+      <th>{{produto.CodigoCest}}</th> 
+      <th>{{produto.CustodaCXouUNID}}</th> 
+      <th>{{produto.CodigoEan}}</th> 
+      <th>{{produto.CodigoDum}}</th>
       <td>
-        <a routerLink="/update" (click)="update(client.id, client)">
+        <a routerLink="/update" (click)="update(produto.id, produto)">
           <i class="fas fa-pencil-alt"></i>
         </a>
-        <a routerLink="/delete" (click)="deleteClient(client.id,client)">
+        <a routerLink="/delete" (click)="deleteClient(produto.id,produto)">
           <i class="far fa-trash-alt"></i>
         </a>
-        <a routerLink="/details" (click)="trazerCliente(client.id, client)">
+        <a routerLink="/details" (click)="trazerCliente(produto.id, produto)">
           <i class="fas fa-info-circle"></i>
         </a>
       </td>

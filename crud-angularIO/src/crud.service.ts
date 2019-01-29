@@ -4,7 +4,8 @@ import { HttpClient } from "@angular/common/http";
 @Injectable()
 export class CrudService {
 
-    configUrl = "http://localhost:3000/clients";
+    //configUrl = "http://localhost:3000/clients";
+    configUrl = "http://localhost:3000/produtos";
 
     constructor(private http: HttpClient) { }
 

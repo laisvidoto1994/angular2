@@ -11,10 +11,10 @@ import {CrudService} from '../../crud.service';
 export class FormCreateComponent{
   constructor(public crudService: CrudService) { }
   
-  createClient(form){
+  cadastrar(form){
       this.crudService.create(form.value).subscribe(
         data => {
-        window.location.reload();
+        //window.location.reload();
         console.log(data);
       },
       error => {

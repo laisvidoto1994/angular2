@@ -11,6 +11,7 @@ import { CrudService } from "../../crud.service";
 export class TableComponent implements OnInit {
 
   clients: any = [];
+  produtos: any = [];
 
   constructor(public crudService: CrudService) { }
  
@@ -22,7 +23,8 @@ export class TableComponent implements OnInit {
   getClients() {
     this.crudService.read().subscribe(
       data => {
-        this.clients = data;
+        //this.clients = data;
+        this.produtos = data;
         console.log(data);
       },
       error => {
@@ -35,7 +37,8 @@ export class TableComponent implements OnInit {
   trazerCliente(id, client) {
     this.crudService.search(id).subscribe(
       data => {
-        this.clients = data;
+        //this.clients = data;
+        this.produtos = data;
         console.log(data);
       },
       error => {

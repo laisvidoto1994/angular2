@@ -1,49 +1,70 @@
 <h1>create</h1>
 <div class="wrapper">
-  <div class ="container"> 
+  <div class="container">
 
-    <form #f="ngForm" (ngSubmit)="createClient(f)">
+    <form #f="ngForm" (ngSubmit)="cadastrar(f)">
 
-        <div class="form-group">
-            <label for="nome">Nome</label> 
-          <div class="form-inline my-2 my-lg-0">
-            <input name="nome" ngModel class="form-control mr-sm-2" type="text">
-          </div>
+      <!--  nomeProduto -->
+      <div class="form-group">
+        <label for="nome">nomeProduto</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
         </div>
+      </div>
 
-        <div class="form-group">
-            <label for="idade">Idade</label> 
-          <div class="form-inline my-2 my-lg-0">
-            <input name="idade" ngModel class="form-control mr-sm-2" type="number">
-          </div>
+      <!--  marca -->
+      <div class="form-group">
+        <label for="nome">marca</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
         </div>
+      </div>
 
-        <div class="form-group">
-            <label for="cpf">CPF</label> 
-          <div class="form-inline my-2 my-lg-0">
-            <input name="cpf" ngModel class="form-control mr-sm-2" type="text">
-          </div>
+      <!--  ncm -->
+      <div class="form-group">
+        <label for="nome">ncm</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
         </div>
+      </div>
 
-        <div class="form-group">
-            <label for="telefone">Telefone</label> 
-          <div class="form-inline my-2 my-lg-0">
-            <input name="telefone" ngModel class="form-control mr-sm-2" type="text">
-          </div>
+      <!--  CodigoCest -->
+      <div class="form-group">
+        <label for="nome">CodigoCest</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
         </div>
+      </div>
 
-        <div class="form-group">
-            <label for="email">E-mail</label> 
-          <div class="form-inline my-2 my-lg-0">
-            <input name="email" ngModel class="form-control mr-sm-2" type="text" placeholder="ex: tatiana@email.com">
-          </div>
+      <!--  CustodaCXouUNID -->
+      <div class="form-group">
+        <label for="nome">CustodaCXouUNID</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
         </div>
+      </div>
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-outline-danger">Cadastrar</button>
+      <!--  CodigoEan -->
+      <div class="form-group">
+        <label for="nome">CodigoEan</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
         </div>
+      </div>
 
-      </form>
+      <!--  CodigoDum -->
+      <div class="form-group">
+        <label for="nome">CodigoDum</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-danger" (onclick)="cadastrar(f)">Cadastrar</button>
+      </div>
+
+    </form>
 
   </div>
 </div>

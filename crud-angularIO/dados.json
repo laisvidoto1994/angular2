@@ -1,0 +1,34 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "nomeProduto": "MOLHO SAKURA PREMIUM DEV 24X150ML",
+            "marca": "SAKURA",
+            "ncm": 21031010,
+            "CodigoCest": 1703600,
+            "CustodaCXouUNID": 111.63,
+            "CodigoEan": 7896007810017,
+            "CodigoDum": 27896007810011
+        },
+        {
+            "id": 2,
+            "nomeProduto": "MOLHO SAKURA LIGHT DEV 24X150ML",
+            "marca": "SAKURA",
+            "ncm": 21031010,
+            "CodigoCest": 1703600,
+            "CustodaCXouUNID": 112.63,
+            "CodigoEan": 7896007810017,
+            "CodigoDum": 27896007810011
+        },
+        {
+            "id": 3,
+            "nomeProduto": "MOLHO SAKURA TRADICIONAL DEV 24X150ML",
+            "marca": "SAKURA",
+            "ncm": 21031010,
+            "CodigoCest": 1703600,
+            "CustodaCXouUNID": 113.63,
+            "CodigoEan": 7896007810017,
+            "CodigoDum": 27896007810011
+        }
+    ]
+}
