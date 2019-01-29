@@ -1,14 +1,18 @@
 
-# Instruções para rodar o projeto
+### Passos para executar o projeto
 
-Inicialmente é usar o comando:
-npm i
+1º) abra o terminal, e execulte o seguinte comando abaixo:
 
-Posteriormente, para rodar a API deve utilizar o comando:
-json-server --watch db.json
+#### npm install
 
-Por fim deve utilizar o comando:
-ng serve
+2º) abra outro terminal, e execulte o seguinte comando abaixo:
+
+#### json-server --watch dados.json
+
+3º) e por fim, no terminal, e execulte o seguinte comando abaixo:
+
+#### http-server -a localhost -p 8000
+
 
 # Crud
 
