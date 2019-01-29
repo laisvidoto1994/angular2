@@ -21,6 +21,10 @@
 
 ![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/tela%20de%20cadastro.PNG)
 
+#### Tela de Detalhe
+
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/tela%20de%20cadastro.PNG)
+
 
 # AngularProject
 
