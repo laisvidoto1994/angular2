@@ -26,13 +26,13 @@ export class CadastroComponent {
     this.post(formDado);
   }
 
-  post(formDado) { 
+  post(formDado) {
 
-   /* this.http.post(`${this.BaseURL}` / formDado)
-      .subscribe(data => {
-        this.cliente = data;
-      })
-      */
+    /* this.http.post(`${this.BaseURL}` / formDado)
+       .subscribe(data => {
+         this.cliente = data;
+       })
+       */
   }
 
 }

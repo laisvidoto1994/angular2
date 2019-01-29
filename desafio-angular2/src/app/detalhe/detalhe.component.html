@@ -11,23 +11,27 @@
 
       <div class="form-check mx-sm-4 mb-3">
 
-        <input type="">
+        <!-- switch -->
+        <div class="custom-control custom-switch">
+          <input #box type="checkbox" class="custom-control-input" id="switch1" (change)="teste(box.checked)">
+          <label class="custom-control-label" for="switch1">editar</label>
+        </div>
 
         <!-- id -->
-        <div class="form-group">
-          <fieldset disabled="">
+        <div class="form-group ">
+          <fieldset>
             <label for="inputId">id</label>
             <br>
-            <input type="text" class="form-control" id="inputId" aria-describedby="emailHelp" >
+            <input type="text" class="form-control" id="inputId" aria-describedby="emailHelp">
           </fieldset>
         </div>
 
         <!-- nome -->
         <div class="form-group">
-          <fieldset disabled="">
+          <fieldset disabled="box.disabled == true ">
             <label for="inputNome">nome</label>
             <br>
-            <input type="text" class="form-control" id="inputNome" aria-describedby="emailHelp"  >
+            <input type="text" class="form-control" id="inputNome" aria-describedby="emailHelp">
           </fieldset>
         </div>
 

@@ -25,6 +25,11 @@ export class DetalheComponent implements OnInit {
     this.get();
   }
 
+  teste(event: any){
+
+    console.log(event );
+  }
+
   get() {
     /*
     return this.http.get(`${this.BaseURL}/?id=${id}`)
