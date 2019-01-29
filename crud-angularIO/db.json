@@ -1,0 +1,27 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nome": "Lais",
+      "idade": "21",
+      "cpf": "012345678901",
+      "telefone": "11 8111-1111",
+      "email": "lais@accenture.com"
+    },{
+      "id": 2,
+      "nome": "Mercia",
+      "idade": "22",
+      "cpf": "012345678902",
+      "telefone": "11 8111-2222",
+      "email": "mercia@accenture.com"
+    },
+    {
+      "id": 3,
+      "nome": "Evele",
+      "idade": "23",
+      "cpf": "012345678903",
+      "telefone": "11 8111-3333",
+      "email": "evele@accenture.com"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<br>
+<table class="table table-striped text-center">
+  <thead>
+    <tr class="table-active">
+      <th scope="col">Nome</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <th>{{client.nome}}</th>
+      <td>{{client.telefone}}</td>
+      <td>{{client.email}}</td>
+      <td>
+        <a routerLink="/update" (click)="update(client.id, client)">
+          <i class="fas fa-pencil-alt"></i>
+        </a>
+        <a routerLink="/delete" (click)="deleteClient(client.id,client)">
+          <i class="far fa-trash-alt"></i>
+        </a>
+        <a routerLink="/details" (click)="trazerCliente(client.id, client)">
+          <i class="fas fa-info-circle"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
