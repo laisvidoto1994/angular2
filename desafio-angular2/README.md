@@ -15,15 +15,15 @@
 
 #### Tela Principal
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/lista%20de%20contatos.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/inicio.PNG)
 
 #### Tela Cadastro
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/tela%20de%20cadastro.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/cadastro.PNG)
 
 #### Tela de Detalhe
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/tela%20de%20cadastro.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/detalhe.PNG)
 
 
 # AngularProject
