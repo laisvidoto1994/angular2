@@ -13,8 +13,8 @@ Por fim deve utilizar o comando:
 
 #### Tela Principal
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/inicio.PNG)
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/projeto/inicio.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/portifolio/inicio.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/portifolio/inicio2.PNG)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
