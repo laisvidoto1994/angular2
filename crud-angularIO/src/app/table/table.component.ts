@@ -30,7 +30,7 @@ export class TableComponent implements OnInit {
       .read().subscribe(
         data => { 
           this.produtos = data;
-          console.log(data);
+         // console.log(data);
         },
         error => {
           console.log(error);
@@ -43,8 +43,7 @@ export class TableComponent implements OnInit {
 
     this.crudService
       .search(id).subscribe(
-        data => {
-          //this.clients = data;
+        data => { 
           this.produtos = data;
           console.log(data);
         },

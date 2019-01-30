@@ -1,3 +1,8 @@
+<div class="jumbotron">
+  <h1>Dashboard</h1>
+  <p>Visualize seus dados em Dashboard</p>
+  <p><a class="btn btn-primary btn-lg" routerLink="/dashboard">Siga</a></p>
+</div>
 <br>
 <h1>Catalogo de Produtos</h1>
 <br>
@@ -32,7 +37,7 @@
       <th>{{produto.CodigoEan}}</th>
       <th>{{produto.CodigoDum}}</th>
       <td>
-        <a routerLink="/details" (click)="trazerCliente(produto.id, produto)">
+        <a routerLink="['/details',produto.id]" (click)="trazerCliente(produto.id, produto)">
           <i class="fas fa-pencil-alt"></i>
         </a>
         <a routerLink="/details" (click)="trazerCliente(produto.id, produto)">

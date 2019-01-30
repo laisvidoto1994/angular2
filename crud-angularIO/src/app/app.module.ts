@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 /*  */
 import { NavbarComponent } from './navbar/navbar.component';
 import { TableComponent } from './table/table.component';
 import { FormCreateComponent } from './form-create/form-create.component';
 import { DetailsComponent } from './details/details.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 /* Service*/
 import { CrudService } from '../crud.service';
@@ -22,12 +24,14 @@ import { CrudService } from '../crud.service';
     NavbarComponent,
     TableComponent,
     FormCreateComponent,
-    DetailsComponent
+    DetailsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule,    
+    Ng2GoogleChartsModule,
     RouterModule
       .forRoot([
         {
@@ -41,7 +45,15 @@ import { CrudService } from '../crud.service';
         {
           path: 'details',
           component: DetailsComponent
-        }
+        },
+        {
+          path: 'details/:id',
+          component: DetailsComponent
+        },
+        {
+          path: 'dashboard',
+          component: DashboardComponent
+        },
       ])
   ],
   providers: [
