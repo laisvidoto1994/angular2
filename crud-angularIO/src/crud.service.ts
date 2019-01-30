@@ -4,7 +4,6 @@ import { HttpClient } from "@angular/common/http";
 @Injectable()
 export class CrudService {
 
-    //configUrl = "http://localhost:3000/clients";
     configUrl = "http://localhost:3000/produtos";
 
     constructor(private http: HttpClient) { }
@@ -12,7 +11,7 @@ export class CrudService {
     /* Leitura dos dados */
     read() {
         return this.http.get(this.configUrl)
-    } 
+    }
 
     /* procurar dos dados */
     search(id) {

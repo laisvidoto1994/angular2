@@ -1,70 +1,107 @@
-<h1>create</h1>
+<h1>Cadastro de Produtos</h1>
 <div class="wrapper">
   <div class="container">
 
     <form #f="ngForm" (ngSubmit)="cadastrar(f)">
 
-      <!--  nomeProduto -->
+      <!-- nome do Produto -->
       <div class="form-group">
-        <label for="nome">nomeProduto</label>
+        <label for="nomeProduto">nomeProduto</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+          <input name="nomeProduto" ngModel class="form-control mr-sm-2" type="text">
         </div>
       </div>
 
-      <!--  marca -->
+      <!-- marca -->
       <div class="form-group">
-        <label for="nome">marca</label>
+        <label for="marca">marca</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+          <input name="marca" ngModel class="form-control mr-sm-2" type="text">
         </div>
       </div>
 
       <!--  ncm -->
       <div class="form-group">
-        <label for="nome">ncm</label>
+        <label for="ncm">ncm</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+          <input name="ncm" ngModel class="form-control mr-sm-2" type="text">
         </div>
       </div>
 
       <!--  CodigoCest -->
       <div class="form-group">
-        <label for="nome">CodigoCest</label>
+        <label for="CodigoCest">CodigoCest</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+          <input name="CodigoCest" ngModel class="form-control mr-sm-2" type="text">
         </div>
       </div>
 
       <!--  CustodaCXouUNID -->
       <div class="form-group">
-        <label for="nome">CustodaCXouUNID</label>
+        <label for="CustodaCXouUNID">CustodaCXouUNID</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+          <input name="CustodaCXouUNID" ngModel class="form-control mr-sm-2" type="text">
         </div>
       </div>
 
       <!--  CodigoEan -->
       <div class="form-group">
-        <label for="nome">CodigoEan</label>
+        <label for="CodigoEan">CodigoEan</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+          <input name="CodigoEan" ngModel class="form-control mr-sm-2" type="text">
         </div>
       </div>
 
       <!--  CodigoDum -->
       <div class="form-group">
-        <label for="nome">CodigoDum</label>
+        <label for="CodigoDum">CodigoDum</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+          <input name="CodigoDum" ngModel class="form-control mr-sm-2" type="text" >
         </div>
       </div>
 
+      <!--  Imagem -->
+      <div class="form-group">
+        <label for="imagem">Imagem</label>
+        <input type="file" name="imagem" id="avatar" ngModel (change)="onChange($event)" #fileInput>
+        <ul>
+          <li *ngFor="let f of files">{{ f.name }}</li>
+        </ul>
+      </div>
+
+      <!-- botão de cadastro -->
       <div class="form-group">
         <button type="submit" class="btn btn-outline-danger" (onclick)="cadastrar(f)">Cadastrar</button>
       </div>
 
     </form>
+
+    <!-- alerta de menssagem de cadastro com sucesso -->
+    <div *ngIf="validacao == true" class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Cadastro realizado com successo!</strong>
+    </div>
+
+    <!-- modal -->
+    <div *ngIf="validacao == true" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Dados Cadastrados com sucesso</h4>
+          </div>
+
+          <div class="modal-body">
+            <p>Você será direcionado para tela inicial, deseja continuar?</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" (onclick)="redirecionar(f)">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
