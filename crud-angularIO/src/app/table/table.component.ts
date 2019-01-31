@@ -9,8 +9,7 @@ import { CrudService } from "../../crud.service";
 })
 
 export class TableComponent implements OnInit {
-
-  clients: any = [];
+ 
   produtos: any = [];
 
   filteredTodos: any = [];

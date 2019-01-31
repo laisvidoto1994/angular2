@@ -1,27 +1,34 @@
 {
-    "clients": [
-      {
-        "id": 1,
-        "nome": "Lais",
-        "idade": "21",
-        "cpf": "012345678901",
-        "telefone": "11 8111-1111",
-        "email": "lais@accenture.com"
-      },{
-        "id": 2,
-        "nome": "Mercia",
-        "idade": "22",
-        "cpf": "012345678902",
-        "telefone": "11 8111-2222",
-        "email": "mercia@accenture.com"
-      },
-      {
-        "id": 3,
-        "nome": "Evele",
-        "idade": "23",
-        "cpf": "012345678903",
-        "telefone": "11 8111-3333",
-        "email": "evele@accenture.com"
-      }
-    ]
-  }
+  "produtos": [
+    {
+      "id": 1,
+      "nomeProduto": "MOLHO SAKURA PREMIUM DEV 24X150ML",
+      "marca": "SAKURA",
+      "ncm": 21031010,
+      "CodigoCest": 1703600,
+      "CustodaCXouUNID": 111.63,
+      "CodigoEan": 7896007810017,
+      "CodigoDum": 27896007810011
+    },
+    {
+      "id": 2,
+      "nomeProduto": "MOLHO SAKURA LIGHT DEV 24X150ML",
+      "marca": "SAKURA",
+      "ncm": 21031010,
+      "CodigoCest": 1703600,
+      "CustodaCXouUNID": 112.63,
+      "CodigoEan": 7896007810017,
+      "CodigoDum": 27896007810011
+    },
+    {
+      "id": 3,
+      "nomeProduto": "MOLHO SAKURA TRADICIONAL DEV 24X150ML",
+      "marca": "SAKURA",
+      "ncm": 21031010,
+      "CodigoCest": 1703600,
+      "CustodaCXouUNID": 113.63,
+      "CodigoEan": 7896007810017,
+      "CodigoDum": 27896007810011
+    }
+  ]
+}

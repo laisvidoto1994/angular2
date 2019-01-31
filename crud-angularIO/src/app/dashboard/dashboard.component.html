@@ -1,2 +1,77 @@
+<div class="teste">
 
-<google-chart [data]="pieChart"></google-chart>
+    <h1>Dashboard</h1>
+
+    <!-- Pizza grafico -->
+    <div class="card border-primary mb-3 carde coluna">
+        <div class="card-header">
+            <h4>Grafico</h4>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Pizza</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <google-chart [data]="pieChart1"></google-chart>
+        </div>
+    </div>
+
+    <!-- Bar grafico -->
+    <div class="card border-primary mb-3 carde coluna">
+        <div class="card-header">
+            <h4>Grafico</h4>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Bar</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <google-chart [data]="pieChart2"></google-chart>
+        </div>
+    </div>
+
+    <!-- ColumnChart grafico -->
+    <div class="card border-primary mb-3 carde coluna">
+        <div class="card-header">
+            <h4>Grafico</h4>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">ColumnChart</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <google-chart [data]="pieChart4"></google-chart>
+        </div>
+    </div>
+
+    <!-- Table grafico -->
+    <div class="card border-primary mb-3 carde coluna">
+        <div class="card-header">
+            <h4>Grafico</h4>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Table</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <google-chart [data]="pieChart3"></google-chart>
+        </div>
+    </div>
+
+    <!-- dados da qtd. de produtos totais -->
+    <div class="card border-primary mb-3 carde coluna">
+        <div class="card-header">
+            <h4>Dado</h4>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li class="coluna">
+                    <p class="card-text">Qtd. Registros</p>
+                    <h4 class="card-title">{{produtos.length}}</h4>
+                </li>
+
+                <li class="coluna">
+                    <p class="card-text">Marca Principal</p>
+                    <h4 class="card-title">{{produtos[0].marca}}</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+}
+
+.teste {
+    margin: 10px; 
+}
+
+h1 {
+    margin: 20px;
+    text-align: center;
+    tab-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: burlywood;
+}
+
+.carde {
+    max-width: 30rem;
+    border-radius: 0.90rem; 
+}
+
+.card-header {
+    background-color: #eb6864b3;
+    text-align: center;
+}
+  
+.card-title {
+    margin-bottom: 0.75rem; 
+}
+
+.coluna{
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.card-body > p{
+    margin-bottom: 20px; 
+}
+  
