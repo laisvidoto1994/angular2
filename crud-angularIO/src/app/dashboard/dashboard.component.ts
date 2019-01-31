@@ -14,10 +14,19 @@ export class DashboardComponent implements OnInit {
   produtos: any = [];
   dataTable: any = [];
 
+  mesAtual = new Date().getUTCDate();
+  anoAtual = new Date().getUTCFullYear();
+  horaAtual = new Date().getHours();
+  minutoAtual = new Date().getMinutes();
+
   constructor(public crudService: CrudService) { }
 
   ngOnInit() {
     this.getClients();
+  }
+
+  formatacaoDataHora() {
+    return this.mesAtual + "/" + this.anoAtual + " " + this.horaAtual + ":" + this.minutoAtual;
   }
 
   /* Mostra TODOS os dados do json */

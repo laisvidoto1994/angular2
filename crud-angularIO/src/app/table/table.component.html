@@ -1,8 +1,11 @@
+<!-- componente que chama á Dashboard -->
 <div class="jumbotron">
   <h1>Dashboard</h1>
   <p>Visualize seus dados em Dashboard</p>
   <p><a class="btn btn-primary btn-lg" routerLink="/dashboard">Siga</a></p>
 </div>
+
+<!-- Lista de produtos -->
 <br>
 <h1>Catalogo de Produtos</h1>
 <br>
@@ -25,7 +28,6 @@
       <th scope="col">Ações</th>
     </tr>
   </thead>
-
   <tbody>
     <tr *ngFor="let produto of produtos">
       <th>{{produto.id}}</th>
@@ -43,7 +45,7 @@
         <a routerLink="/details" (click)="trazerCliente(produto.id, produto)">
           <i class="fas fa-info-circle"></i>
         </a>
-        <a routerLink="/delete" (click)="deleteClient(produto.id,produto)">
+        <a routerLink="/delete" #exclu  (click)="deleteClient(produto.id,produto)">
           <i class="far fa-trash-alt"></i>
         </a>
       </td>
@@ -63,3 +65,10 @@
 
   </tbody>
 </table>
+<br>
+ 
+<!-- alerta de menssagem de excluído com sucesso -->
+<div *ngIf="excluirValidacao == true" class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Registro excluído com successo!</strong>
+</div>

@@ -15,6 +15,7 @@ export class TableComponent implements OnInit {
   filteredTodos: any = [];
   currentPage = 1;
   itemsPerPage = 1;
+  excluirValidacao: boolean = false;
 
   constructor(public crudService: CrudService) { }
 
@@ -59,7 +60,8 @@ export class TableComponent implements OnInit {
     this.crudService
       .delete(id).subscribe(
         data => {
-          alert("Cliente " + client.nome + ", foi removido!");
+         // alert("Cliente " + client.nome + ", foi removido!");
+          this.excluirValidacao = true;
           window.location.reload();
         },
         error => {

@@ -1,4 +1,4 @@
-<div class="teste">
+<div class="espacamento">
 
     <h1>Dashboard</h1>
 
@@ -13,6 +13,7 @@
                 content.</p>
             <google-chart [data]="pieChart1"></google-chart>
         </div>
+        <div class="card-footer">{{formatacaoDataHora()}}</div>
     </div>
 
     <!-- Bar grafico -->
@@ -26,6 +27,7 @@
                 content.</p>
             <google-chart [data]="pieChart2"></google-chart>
         </div>
+        <div class="card-footer">{{formatacaoDataHora()}}</div>
     </div>
 
     <!-- ColumnChart grafico -->
@@ -39,6 +41,7 @@
                 content.</p>
             <google-chart [data]="pieChart4"></google-chart>
         </div>
+        <div class="card-footer">{{formatacaoDataHora()}}</div>
     </div>
 
     <!-- Table grafico -->
@@ -52,6 +55,7 @@
                 content.</p>
             <google-chart [data]="pieChart3"></google-chart>
         </div>
+        <div class="card-footer">{{formatacaoDataHora()}}</div>
     </div>
 
     <!-- dados da qtd. de produtos totais -->
@@ -69,9 +73,10 @@
                 <li class="coluna">
                     <p class="card-text">Marca Principal</p>
                     <h4 class="card-title">{{produtos[0].marca}}</h4>
-                </li>
+                </li> 
             </ul>
         </div>
+        <div class="card-footer">{{formatacaoDataHora()}}</div>
     </div>
 
 </div>
