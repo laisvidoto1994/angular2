@@ -39,3 +39,10 @@ Para estilizar as páginas foi utilizado o Framework [Bootswatch](https://bootsw
 #### Tela Detalhe
 
 ![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/update.PNG)
+
+#### Tela Dashboard
+
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/Dashboard.PNG)
+
+
+
