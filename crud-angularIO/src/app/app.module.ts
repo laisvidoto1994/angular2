@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';  
 /* */
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -30,8 +29,8 @@ import { CrudService } from '../crud.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,    
-    Ng2GoogleChartsModule,
+    FormsModule,     
+    Ng2GoogleChartsModule,    
     RouterModule
       .forRoot([
         {

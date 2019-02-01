@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core"; 
 
 import { CrudService } from "../../crud.service";
 
@@ -9,12 +9,16 @@ import { CrudService } from "../../crud.service";
 })
 
 export class TableComponent implements OnInit {
- 
+
+  /* lista de produtos que vem do service */
   produtos: any = [];
 
+  /* paginação */
   filteredTodos: any = [];
   currentPage = 1;
   itemsPerPage = 1;
+
+  /* validação de exclusão */
   excluirValidacao: boolean = false;
 
   constructor(public crudService: CrudService) { }
@@ -28,9 +32,8 @@ export class TableComponent implements OnInit {
 
     this.crudService
       .read().subscribe(
-        data => { 
+        data => {
           this.produtos = data;
-         // console.log(data);
         },
         error => {
           console.log(error);
@@ -43,7 +46,7 @@ export class TableComponent implements OnInit {
 
     this.crudService
       .search(id).subscribe(
-        data => { 
+        data => {
           this.produtos = data;
           console.log(data);
         },
@@ -60,7 +63,6 @@ export class TableComponent implements OnInit {
     this.crudService
       .delete(id).subscribe(
         data => {
-         // alert("Cliente " + client.nome + ", foi removido!");
           this.excluirValidacao = true;
           window.location.reload();
         },
@@ -70,12 +72,10 @@ export class TableComponent implements OnInit {
       );
   }
 
-  /* paginação */
+  /* lgica da paginação */
   pageChanged() {
-
     var begin = ((this.currentPage - 1) * this.itemsPerPage);
     var end = begin + this.itemsPerPage;
-
     this.filteredTodos = this.produtos.slice(begin, end);
   };
 

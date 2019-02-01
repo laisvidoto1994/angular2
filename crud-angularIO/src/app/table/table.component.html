@@ -5,18 +5,23 @@
   <p><a class="btn btn-primary btn-lg" routerLink="/dashboard">Siga</a></p>
 </div>
 
-<!-- Lista de produtos -->
 <br>
 <h1>Catalogo de Produtos</h1>
 <br>
+<h4>Total de Receitas: {{produtos.length}}</h4>
+<br>
+
+<!-- campo de busca de produtos -->
 <form class="form-inline my-2 my-lg-0">
   <input class="form-control mr-sm-2" type="text" placeholder="Buscar por produto">
   <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
 </form>
+
+<!-- Lista de produtos -->
 <br>
 <table class="table table-striped text-center">
   <thead>
-    <tr class="table-active">
+    <tr class="table-primary">
       <th scope="col">#</th>
       <th scope="col">Produto</th>
       <th scope="col">Marca</th>
@@ -29,7 +34,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let produto of produtos">
+    <tr class="table-default" *ngFor="let produto of produtos">
       <th>{{produto.id}}</th>
       <th>{{produto.nomeProduto}}</th>
       <th>{{produto.marca}}</th>
@@ -45,28 +50,30 @@
         <a routerLink="/details" (click)="trazerCliente(produto.id, produto)">
           <i class="fas fa-info-circle"></i>
         </a>
-        <a routerLink="/delete" #exclu  (click)="deleteClient(produto.id,produto)">
+        <a routerLink="/delete" #exclu (click)="deleteClient(produto.id, produto)">
           <i class="far fa-trash-alt"></i>
         </a>
       </td>
     </tr>
+    <br>
 
     <!-- Paginação -->
-    <ul class="pagination" *ngFor="let produto of produtos; let i = index">
-      <ol class="teste">
-        <a href="#">{{i}}</a>
-      </ol>
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&laquo;</a>
+      </li>
+      <li class="page-item active" *ngFor="let produto of produtos; let i = index">
+        <a class="page-link" href="#">{{i+1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">&raquo;</a>
+      </li>
     </ul>
-
-
-    <!--pagination boundary-links="true" max-size="3" items-per-page="itemsPerPage" total-items="produtos.length"
-     ng-model="currentPage" ng-change="pageChanged()">
-  </pagination-->
 
   </tbody>
 </table>
 <br>
- 
+
 <!-- alerta de menssagem de excluído com sucesso -->
 <div *ngIf="excluirValidacao == true" class="alert alert-dismissible alert-success">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
