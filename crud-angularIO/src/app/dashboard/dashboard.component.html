@@ -73,7 +73,23 @@
                 <li class="coluna">
                     <p class="card-text">Marca Principal</p>
                     <h4 class="card-title">{{produtos[0].marca}}</h4>
-                </li> 
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer">{{formatacaoDataHora()}}</div>
+    </div>
+
+    <!-- dados da qtd. de produtos totais -->
+    <div class="card border-primary mb-3 carde coluna">
+        <div class="card-header">
+            <h4>Contatos</h4>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li class="coluna">
+                    <p class="card-text">Qtd. de Contatos de clientes</p>
+                    <h4 class="card-title">{{menssagem.length}}</h4>
+                </li>                  
             </ul>
         </div>
         <div class="card-footer">{{formatacaoDataHora()}}</div>

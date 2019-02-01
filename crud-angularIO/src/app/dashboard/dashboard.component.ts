@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getClients();
+    this.getMessage();
   }
 
   formatacaoDataHora() {
