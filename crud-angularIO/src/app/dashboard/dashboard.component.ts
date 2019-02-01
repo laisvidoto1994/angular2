@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   produtos: any = [];
   menssagem: any = [];
   dataTable: any = [];
+  dataTable2: any = [];
 
   mesAtual = new Date().getUTCDate();
   anoAtual = new Date().getUTCFullYear();
@@ -67,7 +68,7 @@ export class DashboardComponent implements OnInit {
     chartType: 'PieChart',
     dataTable: [
       ['Task', 'valor'],
-      ['Work', 8],
+      ['Work', 3],
       ['Eat', 2],
       ['Commute', 2],
       ['Watch TV', 2],
@@ -125,7 +126,7 @@ export class DashboardComponent implements OnInit {
   /* Grafico Table */
   public pieChart3: GoogleChartInterface = {
 
-    chartType: 'Table',
+    chartType: 'Table', 
     dataTable: [
       ['Department', 'Revenues', 'Another column', 'ColorFormat'],
       ['Shoes', 10700, -100, 100],
