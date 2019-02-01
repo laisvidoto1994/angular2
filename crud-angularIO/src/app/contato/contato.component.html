@@ -1,0 +1,53 @@
+<div class="jumbotron">
+  <h1></h1>
+</div>
+
+<br>
+<h3>Entre em contato conosco</h3>
+<br>
+
+<div class="wrapper">
+  <div class="container">
+
+    <form #f="ngForm" (ngSubmit)="enviarDado(f)">
+
+      <!-- nome do cliente -->
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+        </div>
+      </div>
+
+      <!-- e-mail -->
+      <div class="form-group">
+        <label for="email">e-mail</label>
+        <div class="form-inline my-2 my-lg-0">
+          <input name="email" ngModel class="form-control mr-sm-2" type="email">
+        </div>
+      </div>
+
+      <!-- texto do contato -->
+      <div class="form-group">
+        <label for="textarea">informe:</label>
+        <div class="form-inline my-2 my-lg-0">
+          <textarea name="textarea" ngModel rows="10" cols="50"></textarea>
+        </div>
+      </div>
+      <br>
+
+      <!-- botão de cadastro -->
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-danger" (onclick)="enviarDado(f)">Enviar</button>
+      </div>
+
+    </form>
+
+    <!-- alerta de menssagem de cadastro com sucesso -->
+    <div *ngIf="validacao == true" class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Cadastro realizado com successo!</strong>
+    </div>
+
+  </div>
+</div>

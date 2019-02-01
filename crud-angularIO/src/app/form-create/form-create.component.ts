@@ -14,7 +14,7 @@ export class FormCreateComponent {
   router: Router;
   validacao: boolean = false;
   files: FileList;
-  base64textString: String = ""; 
+  base64textString: String = "";
 
   constructor(public crudService: CrudService, router: Router) {
     this.router = router;
@@ -29,7 +29,7 @@ export class FormCreateComponent {
       let reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = this._handleReaderLoaded.bind(this);
-      reader.readAsBinaryString(file); 
+      reader.readAsBinaryString(file);
       return this.base64textString;
     }
   }
@@ -48,8 +48,8 @@ export class FormCreateComponent {
     console.log(teste);
     console.log(teste.imagem);
 
-   teste.imagem = this.base64textString;
- 
+    teste.imagem = this.base64textString;
+
     this.crudService.create(teste).subscribe(
       data => {
         console.log(data);
@@ -62,7 +62,7 @@ export class FormCreateComponent {
         console.log(error);
       }
     );
- 
+
   }
 
   /* função de redirecionamento para pagina inicial */

@@ -1,20 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';  
+
 /* */
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
-/*  */
+/* Components */
 import { NavbarComponent } from './navbar/navbar.component';
 import { TableComponent } from './table/table.component';
 import { FormCreateComponent } from './form-create/form-create.component';
 import { DetailsComponent } from './details/details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContatoComponent } from './contato/contato.component';
 
-/* Service*/
+/* Service */
 import { CrudService } from '../crud.service';
 
 @NgModule({
@@ -24,7 +26,8 @@ import { CrudService } from '../crud.service';
     TableComponent,
     FormCreateComponent,
     DetailsComponent,
-    DashboardComponent
+    DashboardComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,10 @@ import { CrudService } from '../crud.service';
         {
           path: 'dashboard',
           component: DashboardComponent
+        },
+        {
+          path: 'contato',
+          component: ContatoComponent
         },
       ])
   ],

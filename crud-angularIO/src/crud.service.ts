@@ -4,9 +4,9 @@ import { HttpClient } from "@angular/common/http";
 @Injectable()
 export class CrudService {
 
-    configUrl = "http://localhost:3000/produtos";
-
     constructor(private http: HttpClient) { }
+
+    configUrl = "http://localhost:3000/produtos";
 
     /* Leitura dos dados */
     read() {
@@ -31,5 +31,20 @@ export class CrudService {
     /* Exclusão dos dados */
     delete(id) {
         return this.http.delete(`${this.configUrl}/${id}`)
+    }
+
+    /**********************************/
+    /*      service de menssagem      */
+    /**********************************/
+    configUrl2 = "http://localhost:3000/menssagens";
+
+    /* Criação dos dados */
+    create2(client) {
+        return this.http.post(this.configUrl2, client)
+    }
+
+    /* Leitura dos dados */
+    read2() {
+        return this.http.get(this.configUrl2)
     }
 }

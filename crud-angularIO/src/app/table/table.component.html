@@ -13,7 +13,7 @@
 
 <!-- campo de busca de produtos -->
 <form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="text" placeholder="Buscar por produto">
+  <input class="form-control mr-sm-2" type="search" name="search" placeholder="Buscar por produto">
   <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
 </form>
 
@@ -44,14 +44,14 @@
       <th>{{produto.CodigoEan}}</th>
       <th>{{produto.CodigoDum}}</th>
       <td>
-        <a routerLink="['/details',produto.id]" (click)="trazerCliente(produto.id, produto)">
-          <i class="fas fa-pencil-alt"></i>
+        <a routerLink="['/details',produto.id]" (click)="trazerCliente(produto.id, produto)" class="alinhamento">
+          <i class="fas fa-pencil-alt fa-lg"></i>
         </a>
-        <a routerLink="/details" (click)="trazerCliente(produto.id, produto)">
-          <i class="fas fa-info-circle"></i>
+        <a routerLink="/details" (click)="trazerCliente(produto.id, produto)" class="alinhamento">
+          <i class="fas fa-info-circle fa-lg"></i>
         </a>
-        <a routerLink="/delete" #exclu (click)="deleteClient(produto.id, produto)">
-          <i class="far fa-trash-alt"></i>
+        <a routerLink="/delete" #exclu (click)="deleteClient(produto.id, produto)" class="alinhamento">
+          <i class="far fa-trash-alt fa-lg"></i>
         </a>
       </td>
     </tr>

@@ -30,5 +30,13 @@
       "CodigoEan": 7896007810017,
       "CodigoDum": 27896007810011
     }
+  ],
+  "menssagens": [
+    {
+      "nome": "Laís Vidoto",
+      "email": "lais.vidoto@gmail.com",
+      "textarea": "teste de testes",
+      "id": 1
+    }
   ]
 }

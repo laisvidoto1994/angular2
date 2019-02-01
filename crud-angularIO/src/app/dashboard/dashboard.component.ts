@@ -12,6 +12,7 @@ import { CrudService } from "../../crud.service";
 export class DashboardComponent implements OnInit {
 
   produtos: any = [];
+  menssagem: any = [];
   dataTable: any = [];
 
   mesAtual = new Date().getUTCDate();
@@ -36,6 +37,21 @@ export class DashboardComponent implements OnInit {
       .read().subscribe(
         data => {
           this.produtos = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
+  /* Mostra TODOS os dados do json de menssagem */
+  getMessage() {
+
+    this.crudService
+      .read2().subscribe(
+        data => {
+          this.menssagem = data;
           console.log(data);
         },
         error => {
@@ -119,7 +135,6 @@ export class DashboardComponent implements OnInit {
       ['Art', 1100, 42, 400]
     ],
 
-    //opt_firstRowIsData: true,
     options: {
       'title': 'Google Chart Table',
       colors: ['#93bfa3', '#f2b680', '#f29999', '#737373'],
