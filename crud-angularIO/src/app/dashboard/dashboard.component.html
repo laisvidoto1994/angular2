@@ -71,14 +71,14 @@
                 </li>
 
                 <li class="coluna">
-                    <p class="card-text">Marca Principal</p>
-                    <h4 class="card-title">{{produtos[0].marca}}</h4>
+                    <p class="card-text">Principal</p>
+                    <h4 class="card-title">{{produtos[0].tipo}}</h4>
                 </li>
             </ul>
         </div>
         <div class="card-footer">{{formatacaoDataHora()}}</div>
     </div>
-
+ 
     <!-- dados da qtd. de produtos totais -->
     <div class="card border-primary mb-3 carde coluna">
         <div class="card-header">
@@ -89,10 +89,23 @@
                 <li class="coluna">
                     <p class="card-text">Qtd. de Contatos de clientes</p>
                     <h4 class="card-title">{{menssagem.length}}</h4>
-                </li>                  
+                </li>
             </ul>
         </div>
         <div class="card-footer">{{formatacaoDataHora()}}</div>
     </div>
 
+    <!-- bar grafico chartJS-->
+    <div class="card border-primary mb-3 carde coluna">
+        <div class="card-header">
+            <h4>Grafico</h4>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Table</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <canvas id="barChart" width="100" height="50" class="chartjs-render-monitor" style="display:block;"></canvas>
+        </div>
+        <div class="card-footer">{{formatacaoDataHora()}}</div>
+    </div>
 </div>

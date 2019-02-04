@@ -6,7 +6,7 @@
 </div>
 
 <br>
-<h1>Catalogo de Produtos</h1>
+<h1>Catalogo de Hospedagens</h1>
 <br>
 <h4>Total de Receitas: {{produtos.length}}</h4>
 <br>
@@ -23,26 +23,24 @@
   <thead>
     <tr class="table-primary">
       <th scope="col">#</th>
-      <th scope="col">Produto</th>
-      <th scope="col">Marca</th>
-      <th scope="col">ncm</th>
-      <th scope="col">Codigo Cest</th>
-      <th scope="col">Custo da CX ou UNID</th>
-      <th scope="col">Codigo Ean</th>
-      <th scope="col">Codigo Dum</th>
+      <th scope="col">nome</th>
+      <th scope="col">tipo</th>
+      <th scope="col">responsável</th>
+      <th scope="col">contato</th>
+      <th scope="col">Custo por Pessoa</th>
+      <th scope="col">Aceita Animal</th>
       <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
     <tr class="table-default" *ngFor="let produto of produtos">
       <th>{{produto.id}}</th>
-      <th>{{produto.nomeProduto}}</th>
-      <th>{{produto.marca}}</th>
-      <th>{{produto.ncm}}</th>
-      <th>{{produto.CodigoCest}}</th>
-      <th>{{produto.CustodaCXouUNID}}</th>
-      <th>{{produto.CodigoEan}}</th>
-      <th>{{produto.CodigoDum}}</th>
+      <th>{{produto.nomeHospedagem}}</th>
+      <th>{{produto.tipo}}</th>
+      <th>{{produto.gerenteHotel}}</th>
+      <th>{{produto.contatoEmail}}</th>
+      <th>R$ {{produto.custoPessoa}},00</th>
+      <th>{{produto.aceitaAnimal}}</th>
       <td>
         <a routerLink="['/details',produto.id]" (click)="trazerCliente(produto.id, produto)" class="alinhamento">
           <i class="fas fa-pencil-alt fa-lg"></i>

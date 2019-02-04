@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GoogleChartInterface } from 'ng2-google-charts/google-charts-interfaces';
 
+import * as Chart from 'chart.js';
+
 import { CrudService } from "../../crud.service";
 
 @Component({
@@ -16,16 +18,69 @@ export class DashboardComponent implements OnInit {
   dataTable: any = [];
   dataTable2: any = [];
 
+  testa=9;
+
   mesAtual = new Date().getUTCDate();
   anoAtual = new Date().getUTCFullYear();
   horaAtual = new Date().getHours();
   minutoAtual = new Date().getMinutes();
 
+  BarChart: any;
+
   constructor(public crudService: CrudService) { }
 
   ngOnInit() {
     this.getClients();
-    this.getMessage();
+    this.getMessage(); 
+
+    this.BarChart = new Chart('barChart', {
+      type: 'bar',
+      data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+          label: "# of values",
+          data: [this.testa, 7, 3, 5, 2, 10],
+          backgroundColor: [
+            'rgba(255,99,132,0.2)',
+            'rgba(54,162,235,0.2)',
+            'rgba(255,206,86,0.2)',
+            'rgba(75,192,192,0.2)',
+            'rgba(153,102,255,0.2)',
+            'rgba(255,159,64,0.2)',
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54,162,235,1)',
+            'rgba(255,206,86,1)',
+            'rgba(75,192,192,1)',
+            'rgba(153,102,255,1)',
+            'rgba(255,159,64,1)',
+          ],
+          borderWidth: 1,
+        }]
+      },
+      options: {
+        title: {
+          text: "bar",
+          display: true
+        },
+        legend: {
+          position: 'left',
+          textStyle: {
+            color: 'black',
+            fontSize: 15
+          }
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+
   }
 
   formatacaoDataHora() {
@@ -67,7 +122,7 @@ export class DashboardComponent implements OnInit {
 
     chartType: 'PieChart',
     dataTable: [
-      ['Task', 'valor'],
+      ['Task', 'valor1'],
       ['Work', 3],
       ['Eat', 2],
       ['Commute', 2],
@@ -126,7 +181,7 @@ export class DashboardComponent implements OnInit {
   /* Grafico Table */
   public pieChart3: GoogleChartInterface = {
 
-    chartType: 'Table', 
+    chartType: 'Table',
     dataTable: [
       ['Department', 'Revenues', 'Another column', 'ColorFormat'],
       ['Shoes', 10700, -100, 100],
@@ -204,6 +259,8 @@ export class DashboardComponent implements OnInit {
       is3D: false,
     },
   };
+
+
 
 }
 

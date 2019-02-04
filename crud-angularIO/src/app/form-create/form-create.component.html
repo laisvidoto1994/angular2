@@ -71,34 +71,41 @@
 
       <!-- botão de cadastro -->
       <div class="form-group">
-        <button type="submit" class="btn btn-outline-danger" (onclick)="cadastrar(f)">Cadastrar</button>
+        <button type="submit" class="btn btn-outline-danger" (onclick)="cadastrar(f)" data-toggle="modal" data-target="#exampleModalCenter">Cadastrar</button>
       </div>
 
     </form>
     <br>
-    
+
     <!-- alerta de menssagem de cadastro com sucesso -->
     <div *ngIf="validacao == true" class="alert alert-dismissible alert-success">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <strong>E-mail enviado com successo!</strong>
     </div>
 
-    <!-- modal -->
-    <div *ngIf="validacao == true" class="modal">
-      <div class="modal-dialog">
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Dados Cadastrados com sucesso</h4>
+            <h5 class="modal-title" id="exampleModalLongTitle">Novos Dados Encontrados</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-
           <div class="modal-body">
-            <p>Você será direcionado para tela inicial, deseja continuar?</p>
+            deseja salvar as informações passadas?
           </div>
-
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success" (onclick)="redirecionar(f)">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">sim</button>
+            <button type="button" class="btn btn-primary">não</button>
           </div>
         </div>
       </div>
