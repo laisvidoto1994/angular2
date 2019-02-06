@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   dataTable: any = [];
   dataTable2: any = [];
 
-  testa=9;
+  testa = 9;
 
   mesAtual = new Date().getUTCDate();
   anoAtual = new Date().getUTCFullYear();
@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getClients();
-    this.getMessage(); 
+    this.getMessage();
 
     this.BarChart = new Chart('barChart', {
       type: 'bar',

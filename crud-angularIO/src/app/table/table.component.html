@@ -1,79 +1,80 @@
 <!-- componente que chama á Dashboard -->
-<div class="jumbotron">
+<div class="imagemTopo">
   <h1>Dashboard</h1>
   <p>Visualize seus dados em Dashboard</p>
   <p><a class="btn btn-primary btn-lg" routerLink="/dashboard">Siga</a></p>
 </div>
 
 <br>
-<h1>Catalogo de Hospedagens</h1>
-<br>
-<h4>Total de Receitas: {{produtos.length}}</h4>
-<br>
+<div class="marginPrincipal">
+  <h1>Catalogo de Hospedagens</h1>
+  <br>
+  <h4>Total de Receitas: {{produtos.length}}</h4>
+  <br>
+  <form class="form-inline my-2 my-lg-0" #formularioTable="ngForm" (ngSubmit)="observar(formularioTable)">
 
-<!-- campo de busca de produtos -->
-<form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="search" name="search" placeholder="Buscar por produto">
-  <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-</form>
+    <!-- campo de busca de produtos -->
+    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Buscar por produto">
+    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  <br>
+  <!-- Lista de produtos -->
+  <table class="table table-striped text-center">
+    <thead>
+      <tr class="table-primary">
+        <th>#</th>
+        <th>nome</th>
+        <th>tipo</th>
+        <th>responsável</th>
+        <th>contato</th>
+        <th>Custo por Pessoa</th>
+        <th>Aceita Animal</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-default" *ngFor="let produto of produtos">
+        <th>{{produto.id}}</th>
+        <th>{{produto.nomeHospedagem}}</th>
+        <th>{{produto.tipo}}</th>
+        <th>{{produto.gerenteHotel}}</th>
+        <th>{{produto.contatoEmail}}</th>
+        <th>R$ {{produto.custoPessoa}},00</th>
+        <th>{{produto.aceitaAnimal}}</th>
+        <td>
+          <a routerLink="['/details',produto.id]" (click)="trazerCliente(produto.id, produto)" class="marginIcones">
+            <i class="fas fa-pencil-alt fa-lg"></i>
+          </a>
+          <a routerLink="/details" (click)="trazerCliente(produto.id, produto)" class="marginIcones">
+            <i class="fas fa-info-circle fa-lg"></i>
+          </a>
+          <a routerLink="/delete" #exclu (click)="deleteClient(produto.id, produto)" class="marginIcones">
+            <i class="far fa-trash-alt fa-lg"></i>
+          </a>
+        </td>
+      </tr>
+      <br>
 
-<!-- Lista de produtos -->
-<br>
-<table class="table table-striped text-center">
-  <thead>
-    <tr class="table-primary">
-      <th scope="col">#</th>
-      <th scope="col">nome</th>
-      <th scope="col">tipo</th>
-      <th scope="col">responsável</th>
-      <th scope="col">contato</th>
-      <th scope="col">Custo por Pessoa</th>
-      <th scope="col">Aceita Animal</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-default" *ngFor="let produto of produtos">
-      <th>{{produto.id}}</th>
-      <th>{{produto.nomeHospedagem}}</th>
-      <th>{{produto.tipo}}</th>
-      <th>{{produto.gerenteHotel}}</th>
-      <th>{{produto.contatoEmail}}</th>
-      <th>R$ {{produto.custoPessoa}},00</th>
-      <th>{{produto.aceitaAnimal}}</th>
-      <td>
-        <a routerLink="['/details',produto.id]" (click)="trazerCliente(produto.id, produto)" class="alinhamento">
-          <i class="fas fa-pencil-alt fa-lg"></i>
-        </a>
-        <a routerLink="/details" (click)="trazerCliente(produto.id, produto)" class="alinhamento">
-          <i class="fas fa-info-circle fa-lg"></i>
-        </a>
-        <a routerLink="/delete" #exclu (click)="deleteClient(produto.id, produto)" class="alinhamento">
-          <i class="far fa-trash-alt fa-lg"></i>
-        </a>
-      </td>
-    </tr>
-    <br>
+      <!-- Paginação da table -->
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="#">&laquo;</a>
+        </li>
+        <li class="page-item active" *ngFor="let produto of produtos; let i = index">
+          <a class="page-link" href="#">{{i+1}}</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">&raquo;</a>
+        </li>
+      </ul>
 
-    <!-- Paginação -->
-    <ul class="pagination">
-      <li class="page-item disabled">
-        <a class="page-link" href="#">&laquo;</a>
-      </li>
-      <li class="page-item active" *ngFor="let produto of produtos; let i = index">
-        <a class="page-link" href="#">{{i+1}}</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">&raquo;</a>
-      </li>
-    </ul>
+    </tbody>
+  </table>
+  <br>
 
-  </tbody>
-</table>
-<br>
-
-<!-- alerta de menssagem de excluído com sucesso -->
-<div *ngIf="excluirValidacao == true" class="alert alert-dismissible alert-success">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Registro excluído com successo!</strong>
+  <!-- alerta de menssagem de excluído com sucesso -->
+  <div *ngIf="excluirValidacao == true" class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Registro excluído com successo!</strong>
+  </div>
 </div>

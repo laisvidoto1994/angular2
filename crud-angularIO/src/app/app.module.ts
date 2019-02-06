@@ -1,14 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
+/* Inicialização padrão com os modulos excenciais da aplicação */
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';  
-
-/* */
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { FormsModule } from '@angular/forms';// formularios
+import { RouterModule } from '@angular/router';// roteador
+import { HttpClientModule } from '@angular/common/http';// requisição http
+import { BrowserModule } from '@angular/platform-browser';
 
 /* Components */
+import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TableComponent } from './table/table.component';
 import { FormCreateComponent } from './form-create/form-create.component';
@@ -19,6 +17,10 @@ import { ContatoComponent } from './contato/contato.component';
 /* Service */
 import { CrudService } from '../crud.service';
 
+/* importação do chart do google */
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { ModalComponent } from './modal/modal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,46 +29,49 @@ import { CrudService } from '../crud.service';
     FormCreateComponent,
     DetailsComponent,
     DashboardComponent,
-    ContatoComponent
+    ContatoComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,     
-    Ng2GoogleChartsModule,    
+    FormsModule,
+    Ng2GoogleChartsModule,// importação do chart do google
+
+    // roteamento das paginas
     RouterModule
       .forRoot([
         {
-          path: '',
+          path: '',// define á pagina inicial da aplicação
           component: TableComponent
         },
         {
-          path: 'create',
+          path: 'create',// quando á requisição for /create  sem parametros
           component: FormCreateComponent
         },
         {
-          path: 'details',
+          path: 'details',// quando á requisição for /details sem parametros
           component: DetailsComponent
         },
         {
-          path: 'details/:id',
+          path: 'details/:id',// quando á requisição for /details e passar o id por parametro
           component: DetailsComponent
         },
         {
-          path: 'dashboard',
+          path: 'dashboard',// quando á requisição for /dashboard sem parametros
           component: DashboardComponent
         },
         {
-          path: 'contato',
+          path: 'contato',// quando á requisição for /contato sem parametros
           component: ContatoComponent
         },
       ])
   ],
   providers: [
-    CrudService
+    CrudService // deixar o serviço disponivel para outros poderem utilizar
   ],
   bootstrap: [
-    AppComponent
+    AppComponent // aplicação padrão é AppComponent mesmo
   ]
 })
 

@@ -1,115 +1,89 @@
-<h1>Cadastro de Produtos</h1>
-<div class="wrapper">
-  <div class="container">
+<!-- Tela de Cadastro de novos produtos -->
+<div class="marginPrincipal">
 
-    <form #f="ngForm" (ngSubmit)="cadastrar(f)">
+  <h1 class="marginPrincipal">Cadastro de Produtos</h1>
+  <div class="wrapper">
+    <div class="container">
+      <form #f="ngForm" (ngSubmit)="cadastrar(f)">
 
-      <!-- nome do Produto -->
-      <div class="form-group">
-        <label for="nomeProduto">nomeProduto</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="nomeProduto" ngModel class="form-control mr-sm-2" type="text">
+        <!-- nomeHospedagem -->
+        <div class="form-group marginPrincipal">
+          <label for="nomeHospedagem">nomeHospedagem</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="nomeHospedagem" ngModel class="form-control mr-sm-2" type="text">
+          </div>
         </div>
-      </div>
 
-      <!-- marca -->
-      <div class="form-group">
-        <label for="marca">marca</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="marca" ngModel class="form-control mr-sm-2" type="text">
+        <!-- tipo -->
+        <div class="form-group col-md-4">
+          <label for="tipo">tipo</label>
+          <select id="tipo" class="form-control">
+            <option selected>Choose...</option>
+            <option>hotel</option>
+            <option>Flath</option>
+          </select>
         </div>
-      </div>
-
-      <!--  ncm -->
-      <div class="form-group">
-        <label for="ncm">ncm</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="ncm" ngModel class="form-control mr-sm-2" type="text">
+ 
+        <!-- gerenteHotel -->
+        <div class="form-group marginPrincipal">
+          <label for="gerenteHotel">gerenteHotel</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="gerenteHotel" ngModel class="form-control mr-sm-2" type="text">
+          </div>
         </div>
-      </div>
 
-      <!--  CodigoCest -->
-      <div class="form-group">
-        <label for="CodigoCest">CodigoCest</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="CodigoCest" ngModel class="form-control mr-sm-2" type="text">
+        <!-- contatoEmail -->
+        <div class="form-group marginPrincipal">
+          <label for="contatoEmail">contatoEmail</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="contatoEmail" ngModel class="form-control mr-sm-2" type="email">
+          </div>
         </div>
-      </div>
 
-      <!--  CustodaCXouUNID -->
-      <div class="form-group">
-        <label for="CustodaCXouUNID">CustodaCXouUNID</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="CustodaCXouUNID" ngModel class="form-control mr-sm-2" type="text">
+        <!-- custoPessoa -->
+        <div class="form-group marginPrincipal">
+          <label for="custoPessoa">custoPessoa</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="custoPessoa" ngModel class="form-control mr-sm-2" type="number">
+          </div>
         </div>
-      </div>
 
-      <!--  CodigoEan -->
-      <div class="form-group">
-        <label for="CodigoEan">CodigoEan</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="CodigoEan" ngModel class="form-control mr-sm-2" type="text">
+        <!-- aceitaAnimal -->
+        <div class="form-group marginPrincipal">
+          <label for="aceitaAnimal">aceitaAnimal</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="aceitaAnimal" ngModel class="form-control mr-sm-2" type="text">
+          </div>
         </div>
-      </div>
 
-      <!--  CodigoDum -->
-      <div class="form-group">
-        <label for="CodigoDum">CodigoDum</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="CodigoDum" ngModel class="form-control mr-sm-2" type="text">
+        <!--  Imagem -->
+        <div class="form-group marginPrincipal">
+          <label for="imagem">Imagem</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input type="file" name="imagem" id="avatar" ngModel (change)="onChange($event)" #fileInput>
+          </div>
+          <ul class="form-inline my-2 my-lg-0">
+            <li *ngFor="let f of files">{{ f.name }}
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <!--  Imagem -->
-      <div class="form-group">
-        <label for="imagem">Imagem</label>
-        <input type="file" name="imagem" id="avatar" ngModel (change)="onChange($event)" #fileInput>
-        <ul>
-          <li *ngFor="let f of files">{{ f.name }}</li>
-        </ul>
-      </div>
+        <!-- botão de cadastro -->
+        <div class="form-group marginPrincipal">
+          <button type="submit" class="btn btn-outline-danger" (onclick)="cadastrar(f)" data-toggle="modal" data-target="#exampleModalCenter">Cadastrar</button>
+        </div>
+      </form>
+      <br>
 
-      <!-- botão de cadastro -->
-      <div class="form-group">
-        <button type="submit" class="btn btn-outline-danger" (onclick)="cadastrar(f)" data-toggle="modal" data-target="#exampleModalCenter">Cadastrar</button>
-      </div>
+      <!-- alerta de menssagem de cadastro com sucesso -->
+      <!--div *ngIf="validacao == true" class="alert alert-dismissible alert-success marginPrincipal">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>E-mail enviado com successo!</strong>
+  </div-->
 
-    </form>
-    <br>
-
-    <!-- alerta de menssagem de cadastro com sucesso -->
-    <div *ngIf="validacao == true" class="alert alert-dismissible alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>E-mail enviado com successo!</strong>
     </div>
-
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-      Launch demo modal
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Novos Dados Encontrados</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            deseja salvar as informações passadas?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">sim</button>
-            <button type="button" class="btn btn-primary">não</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </div>
+
+<!-- chamada do modal -->
+<app-modal></app-modal>

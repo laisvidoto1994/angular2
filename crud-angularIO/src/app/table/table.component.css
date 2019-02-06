@@ -1,17 +1,34 @@
+/* --removendo todos os espaçamentos-- */
+
 * {
     margin: 0px;
 }
 
-.teste {
-    border-radius: 0.25rem;
-}
+/* --banner principal-- */
 
-
-.jumbotron{
+.imagemTopo {
     background-image: url("http://contabilidadefrancis.com/wp-content/uploads/2015/08/background-partner-pictures-business-driver-static-city-challenge-110563.png");
+    padding-top: 40px;
+    padding-left: 20px;
+    text-align: left;
 }
 
-alinhamento{
+/* --margin do botão-- */
+
+.imagemTopo p>a {
+    margin-bottom: 40px;
+}
+
+/* --margim dos icones-- */
+
+.marginIcones {
     margin-left: 5px;
     margin-right: 5px;
+}
+
+/* --margem do titulo até a paginação-- */
+
+.marginPrincipal {
+    margin-left: 20px;
+    margin-right: 20px;
 }

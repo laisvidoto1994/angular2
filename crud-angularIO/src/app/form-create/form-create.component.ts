@@ -56,7 +56,7 @@ export class FormCreateComponent {
         //mostrar o alert da menssagem
         this.validacao = true;
         //navegue até á pagina inicial
-        setTimeout(() => this.router.navigate(['/']), 4000);
+        //setTimeout(() => this.router.navigate(['/']), 4000); 
       },
       error => {
         console.log(error);
@@ -70,8 +70,8 @@ export class FormCreateComponent {
     this.router.navigate(['/']);
   }
 
- 
+
 }
-  
+
 
 

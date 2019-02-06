@@ -1,26 +1,25 @@
+<!-- navbar de todas as telas -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- routerLink="" == pagina inicial -->
   <a class="navbar-brand" routerLink="">Fintech</a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+  
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
 
+      <!-- routerLink="" == pagina inicial -->
       <li class="nav-item active">
         <a class="nav-link" routerLink="">Home<span class="sr-only">(current)</span></a>
       </li>
 
+      <!-- routerLink="/create" == pagina criação de produto -->
       <li class="nav-item">
         <a class="nav-link" routerLink="/create">Cadastrar</a>
       </li>
 
+      <!-- routerLink="/contato" == pagina contato do cliente -->
       <li class="nav-item">
         <a class="nav-link" routerLink="/contato">Contato</a>
       </li>
     </ul>
-
   </div>
 </nav>
