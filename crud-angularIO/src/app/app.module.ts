@@ -54,7 +54,7 @@ import { ModalComponent } from './modal/modal.component';
           component: DetailsComponent
         },
         {
-          path: 'details/:id',// quando á requisição for /details e passar o id por parametro
+          path: 'details/:produto',// quando á requisição for /details e passar o id por parametro
           component: DetailsComponent
         },
         {

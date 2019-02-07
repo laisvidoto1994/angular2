@@ -1,6 +1,9 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
+
+import { CrudService } from "../../crud.service";
+
 @Component({
   selector: 'details-component',
   templateUrl: './details.component.html',
@@ -8,20 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DetailsComponent implements OnInit {
+ 
+  detalheProd: any;
 
-  id: string;
-
-  constructor(private route: ActivatedRoute) {
-
-    console.log(route.snapshot.params);
-    this.id = this.route.snapshot.params['id'];
+  constructor(private route: ActivatedRoute) { 
+    this.detalheProd = this.route.snapshot.params;
+    console.log(this.detalheProd);
   }
 
   ngOnInit() {
+
   }
 
   teste(dados) {
-    console.log(dados);
+    // console.log("dado-> " + dados);
   }
 
 

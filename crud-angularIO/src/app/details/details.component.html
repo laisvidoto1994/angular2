@@ -10,61 +10,58 @@
         <input #box type="checkbox" class="custom-control-input" id="switch1" (change)="teste(box.checked)">
         <label class="custom-control-label" for="switch1">editar</label>
       </div>
+      <br>
 
-      <!-- nome do Produto -->
+      <!-- nomeHospedagem -->
       <div class="form-group">
-        <label for="nome">Nome</label>
+        <label for="nomeHospedagem">Nome</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="nome" value="{{id}}" ngModel class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
+          <input name="nomeHospedagem" [(ngModel)]="detalheProd.nomeHospedagem" class="form-control mr-sm-2" type="text"
+            [disabled]="!box.checked == true">
         </div>
       </div>
 
-      <!-- marca -->
+      <!-- tipo -->
       <div class="form-group">
-        <label for="marca">marca</label>
+        <label for="tipo">tipo</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="marca" ngModel class="form-control mr-sm-2" type="number" [disabled]="!box.checked == true">
+          <input name="tipo" [(ngModel)]="detalheProd.tipo" class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
         </div>
       </div>
 
-      <!--  ncm -->
+      <!--  gerenteHotel -->
       <div class="form-group">
-        <label for="ncm">ncm</label>
+        <label for="gerenteHotel">gerenteHotel</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="ncm" ngModel class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
+          <input name="gerenteHotel" [(ngModel)]="detalheProd.gerenteHotel" class="form-control mr-sm-2" type="text"
+            [disabled]="!box.checked == true">
         </div>
       </div>
 
-      <!--  CodigoCest -->
+      <!--  contatoEmail -->
       <div class="form-group">
-        <label for="CodigoCest">CodigoCest</label>
+        <label for="contatoEmail">contatoEmail</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="CodigoCest" ngModel class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
+          <input name="contatoEmail" [(ngModel)]="detalheProd.contatoEmail" class="form-control mr-sm-2" type="email"
+            [disabled]="!box.checked == true">
         </div>
       </div>
 
-      <!--  CustodaCXouUNID -->
+      <!--  custoPessoa -->
       <div class="form-group">
-        <label for="CustodaCXouUNID">CustodaCXouUNID</label>
+        <label for="custoPessoa">custoPessoa</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="CustodaCXouUNID" ngModel class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
+          <input name="custoPessoa" [(ngModel)]="detalheProd.custoPessoa" class="form-control mr-sm-2" type="number"
+            [disabled]="!box.checked == true">
         </div>
       </div>
 
-
-      <!--  CodigoEan -->
+      <!--  aceitaAnimal -->
       <div class="form-group">
-        <label for="CodigoEan">CodigoEan</label>
+        <label for="aceitaAnimal">aceitaAnimal</label>
         <div class="form-inline my-2 my-lg-0">
-          <input name="CodigoEan" ngModel class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
-        </div>
-      </div>
-
-      <!--  CodigoDum -->
-      <div class="form-group">
-        <label for="CodigoDum">CodigoDum</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="CodigoDum" ngModel class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
+          <input name="aceitaAnimal" [(ngModel)]="detalheProd.aceitaAnimal" class="form-control mr-sm-2" type="text"
+            [disabled]="!box.checked == true">
         </div>
       </div>
 
@@ -74,7 +71,6 @@
           <img src="" alt="imagem">
         </div>
       </div>
-
 
     </form>
 

@@ -48,7 +48,7 @@ export class TableComponent implements OnInit {
       .search(id).subscribe(
         data => {
           this.produtos = data;
-          console.log(data);
+       //   console.log(data);
         },
         error => {
           console.log(error);

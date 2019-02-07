@@ -42,7 +42,7 @@
         <th>R$ {{produto.custoPessoa}},00</th>
         <th>{{produto.aceitaAnimal}}</th>
         <td>
-          <a routerLink="['/details',produto.id]" (click)="trazerCliente(produto.id, produto)" class="marginIcones">
+          <a [routerLink]="['/details', produto]" (click)="trazerCliente(produto.id, produto)" class="marginIcones">
             <i class="fas fa-pencil-alt fa-lg"></i>
           </a>
           <a routerLink="/details" (click)="trazerCliente(produto.id, produto)" class="marginIcones">
