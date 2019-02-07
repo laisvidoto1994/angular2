@@ -1,78 +1,83 @@
-<h1>Detalhe</h1>
-<br>
-<div class="wrapper">
-  <div class="container">
+<div class="espacamentoPrincipal">
+  <h1 class="titulo">Detalhe</h1>
+  <div class="wrapper">
+    <div class="container">
 
-    <form #f="ngForm" (ngSubmit)="createClient(f)">
+      <form #f="ngForm" (ngSubmit)="atualizar(f)">
 
-      <!-- switch -->
-      <div class="custom-control custom-switch">
-        <input #box type="checkbox" class="custom-control-input" id="switch1" (change)="teste(box.checked)">
-        <label class="custom-control-label" for="switch1">editar</label>
-      </div>
-      <br>
-
-      <!-- nomeHospedagem -->
-      <div class="form-group">
-        <label for="nomeHospedagem">Nome</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="nomeHospedagem" [(ngModel)]="detalheProd.nomeHospedagem" class="form-control mr-sm-2" type="text"
-            [disabled]="!box.checked == true">
+        <!-- switch -->
+        <div class="custom-control custom-switch">
+          <input #box type="checkbox" class="custom-control-input" id="switch1" (change)="validacaoSwitch(box.checked)">
+          <label class="custom-control-label" for="switch1">editar</label>
         </div>
-      </div>
+        <br>
 
-      <!-- tipo -->
-      <div class="form-group">
-        <label for="tipo">tipo</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="tipo" [(ngModel)]="detalheProd.tipo" class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
+        <!-- nomeHospedagem -->
+        <div class="form-group">
+          <label for="nomeHospedagem">Nome</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="nomeHospedagem" [(ngModel)]="detalheProd.nomeHospedagem" class="form-control mr-sm-2" type="text"
+              [disabled]="!box.checked == true">
+          </div>
         </div>
-      </div>
 
-      <!--  gerenteHotel -->
-      <div class="form-group">
-        <label for="gerenteHotel">gerenteHotel</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="gerenteHotel" [(ngModel)]="detalheProd.gerenteHotel" class="form-control mr-sm-2" type="text"
-            [disabled]="!box.checked == true">
+        <!-- tipo -->
+        <div class="form-group">
+          <label for="tipo">tipo</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="tipo" [(ngModel)]="detalheProd.tipo" class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
+          </div>
         </div>
-      </div>
 
-      <!--  contatoEmail -->
-      <div class="form-group">
-        <label for="contatoEmail">contatoEmail</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="contatoEmail" [(ngModel)]="detalheProd.contatoEmail" class="form-control mr-sm-2" type="email"
-            [disabled]="!box.checked == true">
+        <!--  gerenteHotel -->
+        <div class="form-group">
+          <label for="gerenteHotel">gerenteHotel</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="gerenteHotel" [(ngModel)]="detalheProd.gerenteHotel" class="form-control mr-sm-2" type="text"
+              [disabled]="!box.checked == true">
+          </div>
         </div>
-      </div>
 
-      <!--  custoPessoa -->
-      <div class="form-group">
-        <label for="custoPessoa">custoPessoa</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="custoPessoa" [(ngModel)]="detalheProd.custoPessoa" class="form-control mr-sm-2" type="number"
-            [disabled]="!box.checked == true">
+        <!--  contatoEmail -->
+        <div class="form-group">
+          <label for="contatoEmail">contatoEmail</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="contatoEmail" [(ngModel)]="detalheProd.contatoEmail" class="form-control mr-sm-2" type="email"
+              [disabled]="!box.checked == true">
+          </div>
         </div>
-      </div>
 
-      <!--  aceitaAnimal -->
-      <div class="form-group">
-        <label for="aceitaAnimal">aceitaAnimal</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="aceitaAnimal" [(ngModel)]="detalheProd.aceitaAnimal" class="form-control mr-sm-2" type="text"
-            [disabled]="!box.checked == true">
+        <!--  custoPessoa -->
+        <div class="form-group">
+          <label for="custoPessoa">custoPessoa</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="custoPessoa" [(ngModel)]="detalheProd.custoPessoa" class="form-control mr-sm-2" type="number"
+              [disabled]="!box.checked == true">
+          </div>
         </div>
-      </div>
 
-      <!--  Imagem -->
-      <div class="form-group">
-        <div class="form-inline my-2 my-lg-0">
-          <img src="" alt="imagem">
+        <!--  aceitaAnimal -->
+        <div class="form-group">
+          <label for="aceitaAnimal">aceitaAnimal</label>
+          <div class="form-inline my-2 my-lg-0">
+            <input name="aceitaAnimal" [(ngModel)]="detalheProd.aceitaAnimal" class="form-control mr-sm-2" type="text"
+              [disabled]="!box.checked == true">
+          </div>
         </div>
-      </div>
 
-    </form>
+        <!--  Imagem -->
+        <div class="form-group">
+          <div class="form-inline my-2 my-lg-0">
+            <img src="{{detalheProd.imagem}}" alt="imagem">
+          </div>
+        </div>
 
+        <!-- botão de atualizar -->
+        <div class="form-group marginPrincipal" *ngIf="!box.checked == false">
+          <button type="submit" class="btn btn-outline-danger" (onclick)="atualizar(f)" data-toggle="modal">Atualizar</button>
+        </div>
+
+      </form>
+    </div>
   </div>
 </div>

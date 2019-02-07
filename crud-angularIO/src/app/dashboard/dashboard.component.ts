@@ -20,11 +20,6 @@ export class DashboardComponent implements OnInit {
 
   testa = 9;
 
-  mesAtual = new Date().getUTCDate();
-  anoAtual = new Date().getUTCFullYear();
-  horaAtual = new Date().getHours();
-  minutoAtual = new Date().getMinutes();
-
   BarChart: any;
 
   constructor(public crudService: CrudService) { }
@@ -84,7 +79,7 @@ export class DashboardComponent implements OnInit {
   }
 
   formatacaoDataHora() {
-    return this.mesAtual + "/" + this.anoAtual + " " + this.horaAtual + ":" + this.minutoAtual;
+    return new Date();
   }
 
   /* Mostra TODOS os dados do json */

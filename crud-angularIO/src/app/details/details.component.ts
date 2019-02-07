@@ -11,10 +11,10 @@ import { CrudService } from "../../crud.service";
 })
 
 export class DetailsComponent implements OnInit {
- 
+
   detalheProd: any;
 
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute) {
     this.detalheProd = this.route.snapshot.params;
     console.log(this.detalheProd);
   }
@@ -23,10 +23,14 @@ export class DetailsComponent implements OnInit {
 
   }
 
-  teste(dados) {
+  /* validacao do Check para habilitar edição dos dados */
+  validacaoSwitch(dados) {
     // console.log("dado-> " + dados);
   }
 
-
+  /* atualizar dados cadastrados para o atual */
+  atualizar(formulario) {
+    console.log("atualizado-> " + formulario);
+  }
 
 }

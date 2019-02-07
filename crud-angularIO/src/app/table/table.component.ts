@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core"; 
+import { Component, OnInit } from "@angular/core";
 
 import { CrudService } from "../../crud.service";
 
@@ -18,6 +18,9 @@ export class TableComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 1;
 
+  /* resultado da busca */
+  resultadoBusca: any = [];
+
   /* validação de exclusão */
   excluirValidacao: boolean = false;
 
@@ -26,6 +29,22 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     this.getClients();
   }
+
+  /* botão de busca de dados pelo input */
+  observar(dado) { 
+    console.log("digitado-> " + dado.value.nomeHospedagem);
+    this.resultadoBusca = [];
+
+    for (let index = 0; index < this.produtos.length; index++) {
+      if (this.produtos[index].nomeHospedagem === dado.value.nomeHospedagem) {
+        this.resultadoBusca = this.produtos[index].nomeHospedagem;
+      }
+    }
+    if (this.resultadoBusca == "") {
+      this.resultadoBusca = "Nenhum hotel foi encontrado com esse nome!"
+    }
+  }
+
 
   /* Mostra TODOS os dados do json */
   getClients() {
@@ -48,7 +67,7 @@ export class TableComponent implements OnInit {
       .search(id).subscribe(
         data => {
           this.produtos = data;
-       //   console.log(data);
+          //   console.log(data);
         },
         error => {
           console.log(error);

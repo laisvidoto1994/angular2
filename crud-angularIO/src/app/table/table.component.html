@@ -13,10 +13,13 @@
   <br>
   <form class="form-inline my-2 my-lg-0" #formularioTable="ngForm" (ngSubmit)="observar(formularioTable)">
 
-    <!-- campo de busca de produtos -->
-    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Buscar por produto">
-    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    <!-- campo de busca de hotels pelo nome deles -->
+    <input class="form-control mr-sm-2" type="search" name="nomeHospedagem" placeholder="Buscar por hotel" [(ngModel)]="searchText">
+    <button class="btn btn-primary my-2 my-sm-0" type="submit" (onclick)="observar(formularioTable)">Search</button>
+
+    <div>{{ resultadoBusca }}</div>
   </form>
+
   <br>
   <!-- Lista de produtos -->
   <table class="table table-striped text-center">
@@ -34,17 +37,17 @@
     </thead>
     <tbody>
       <tr class="table-default" *ngFor="let produto of produtos">
-        <th>{{produto.id}}</th>
-        <th>{{produto.nomeHospedagem}}</th>
-        <th>{{produto.tipo}}</th>
-        <th>{{produto.gerenteHotel}}</th>
-        <th>{{produto.contatoEmail}}</th>
-        <th>R$ {{produto.custoPessoa}},00</th>
-        <th>{{produto.aceitaAnimal}}</th>
+        <th>{{ produto.id }}</th>
+        <th>{{ produto.nomeHospedagem }}</th>
+        <th>{{ produto.tipo }}</th>
+        <th>{{ produto.gerenteHotel }}</th>
+        <th>{{ produto.contatoEmail }}</th>
+        <th>{{ produto.custoPessoa | currency:'BRL':true }}</th>
+        <th>{{ produto.aceitaAnimal }}</th>
         <td>
           <a [routerLink]="['/details', produto]" (click)="trazerCliente(produto.id, produto)" class="marginIcones">
             <i class="fas fa-info-circle fa-lg"></i>
-          </a> 
+          </a>
           <a routerLink="/delete" #exclu (click)="deleteClient(produto.id, produto)" class="marginIcones">
             <i class="far fa-trash-alt fa-lg"></i>
           </a>
