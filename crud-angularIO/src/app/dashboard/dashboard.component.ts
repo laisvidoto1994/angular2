@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GoogleChartInterface } from 'ng2-google-charts/google-charts-interfaces';
-
 import * as Chart from 'chart.js';
 
 import { CrudService } from "../../crud.service";
@@ -16,7 +15,7 @@ export class DashboardComponent implements OnInit {
   produtos: any = [];
   menssagem: any = [];
   dataTable: any = [];
-  dataTable2: any = [];
+  validaPieChart1: boolean;
 
   testa = 9;
 
@@ -114,11 +113,11 @@ export class DashboardComponent implements OnInit {
 
   /* Grafico PieChart */
   public pieChart1: GoogleChartInterface = {
-
+  
     chartType: 'PieChart',
     dataTable: [
       ['Task', 'valor1'],
-      ['Work', 3],
+      ['Work', this.produtos[0].id],
       ['Eat', 2],
       ['Commute', 2],
       ['Watch TV', 2],

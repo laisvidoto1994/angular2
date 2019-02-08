@@ -45,6 +45,7 @@
         <th>{{ produto.custoPessoa | currency:'BRL':true }}</th>
         <th>{{ produto.aceitaAnimal }}</th>
         <td>
+          <!-- passando produto por parametro da rota de table para á de details -->
           <a [routerLink]="['/details', produto]" (click)="trazerCliente(produto.id, produto)" class="marginIcones">
             <i class="fas fa-info-circle fa-lg"></i>
           </a>

@@ -13,6 +13,7 @@ import { FormCreateComponent } from './form-create/form-create.component';
 import { DetailsComponent } from './details/details.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContatoComponent } from './contato/contato.component';
+import { GraficoComponent } from './grafico/grafico.component';
 
 /* Service */
 import { CrudService } from '../crud.service';
@@ -30,7 +31,8 @@ import { ModalComponent } from './modal/modal.component';
     DetailsComponent,
     DashboardComponent,
     ContatoComponent,
-    ModalComponent
+    ModalComponent,
+    GraficoComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,7 @@ import { ModalComponent } from './modal/modal.component';
         },
         {
           path: 'dashboard',// quando á requisição for /dashboard sem parametros
-          component: DashboardComponent
+          component: GraficoComponent
         },
         {
           path: 'contato',// quando á requisição for /contato sem parametros
