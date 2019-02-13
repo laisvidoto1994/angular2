@@ -61,8 +61,8 @@ export class GraficoComponent implements OnInit {
                   contflet, contHotels
                 ],
                 backgroundColor: this.backgroundColorChart,
-                borderColor: this.borderColorChart,
-                borderWidth: 1,
+                borderColor: this.borderColorChart,//A cor da linha.
+                borderWidth: 1, //A largura da linha em pixels.
               }]
             },
 
