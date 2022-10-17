@@ -17,7 +17,7 @@ export class DetailsComponent implements OnInit {
 
   /* ActivatedRoute-> rota ativa, para obter os detalhes da rota, inclusive os parametros */
   constructor(private route: ActivatedRoute) {
-    //this.detalheProd = this.route.snapshot.params;/* obtendo os parametros da rota */ 
+    //this.detalheProd = this.route.snapshot.params;/* obtendo os parametros da rota */
   }
 
 
@@ -26,22 +26,30 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe(
       (params: any) => {
         this.detalheProd = params;
+        /*
+         if(this.detalheProd.aceitaAnimal == true){
+          this.detalheProd.aceitaAnimal = "Sim";
+        }
+        else if(this.detalheProd.aceitaAnimal == false){
+          this.detalheProd.aceitaAnimal = "Não";
+        }
+         */
       }
     );
   }
 
-  /* 
+  /*
   * validacao do Check para habilitar edição dos dados
   */
   validacaoSwitch(dados) {
     // console.log("dado-> " + dados);
   }
 
-  /* 
-  * atualizar dados cadastrados para o atual 
+  /*
+  * atualizar dados cadastrados para o atual
   */
   atualizar(formulario) {
-    console.log("atualizado-> " + formulario);
+    //console.log("atualizado-> " + formulario);
   }
 
 }
