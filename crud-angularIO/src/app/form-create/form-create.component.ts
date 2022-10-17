@@ -37,7 +37,7 @@ export class FormCreateComponent {
   _handleReaderLoaded(readerEvt) {
     var binaryString = readerEvt.target.result;
     this.base64textString = btoa(binaryString);
-    console.log(btoa(binaryString));
+    //console.log(btoa(binaryString));
   }
 
   /* funcao de cadastro de novos produtos */
@@ -45,8 +45,8 @@ export class FormCreateComponent {
 
     let teste = form.value;
 
-    console.log(teste);
-    console.log(teste.imagem);
+   // console.log(teste);
+    //console.log(teste.imagem);
 
     teste.imagem = this.base64textString;
 
@@ -56,7 +56,7 @@ export class FormCreateComponent {
         //mostrar o alert da menssagem
         this.validacao = true;
         //navegue até á pagina inicial
-        //setTimeout(() => this.router.navigate(['/']), 4000); 
+        //setTimeout(() => this.router.navigate(['/']), 4000);
       },
       error => {
         console.log(error);
@@ -70,8 +70,16 @@ export class FormCreateComponent {
     this.router.navigate(['/']);
   }
 
+  /*
+  * validacao do Check para habilitar edição dos dados
+  */
+  validacaoSwitch(dados) {
+     //console.log("dado-> " + dados);
+     if(dados == true){
 
+     }
+     else{
+
+     }
+  }
 }
-
-
-
