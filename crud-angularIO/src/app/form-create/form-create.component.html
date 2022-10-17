@@ -1,14 +1,14 @@
 <!-- Tela de Cadastro de novos produtos -->
 <div class="marginPrincipal">
 
-  <h1 class="marginPrincipal">Cadastro de Hospedagens</h1>
+  <h1 class="marginPrincipal">Cadastro de Hospedagem</h1>
   <div class="wrapper">
     <div class="container">
       <form #f="ngForm" (ngSubmit)="cadastrar(f)">
 
         <!-- nomeHospedagem -->
         <div class="form-group marginPrincipal">
-          <label for="nomeHospedagem">nomeHospedagem</label>
+          <label for="nomeHospedagem">Nome da Hospedagem</label>
           <div class="form-inline my-2 my-lg-0">
             <input name="nomeHospedagem" ngModel class="form-control mr-sm-2" type="text">
           </div>
@@ -16,17 +16,17 @@
 
         <!-- tipo -->
         <div class="form-group col-md-4">
-          <label for="tipo">tipo</label>
+          <label for="tipo">Tipo</label>
           <select id="tipo" class="form-control">
-            <option selected>Choose...</option>
-            <option>hotel</option>
-            <option>Flath</option>
+            <option selected>selecione...</option>
+            <option>Hotel</option>
+            <option>Flat</option>
           </select>
         </div>
- 
+
         <!-- gerenteHotel -->
         <div class="form-group marginPrincipal">
-          <label for="gerenteHotel">gerenteHotel</label>
+          <label for="gerenteHotel">Nome do Gerente</label>
           <div class="form-inline my-2 my-lg-0">
             <input name="gerenteHotel" ngModel class="form-control mr-sm-2" type="text">
           </div>
@@ -34,7 +34,7 @@
 
         <!-- contatoEmail -->
         <div class="form-group marginPrincipal">
-          <label for="contatoEmail">contatoEmail</label>
+          <label for="contatoEmail">E-mail</label>
           <div class="form-inline my-2 my-lg-0">
             <input name="contatoEmail" ngModel class="form-control mr-sm-2" type="email">
           </div>
@@ -42,18 +42,16 @@
 
         <!-- custoPessoa -->
         <div class="form-group marginPrincipal">
-          <label for="custoPessoa">custoPessoa</label>
+          <label for="custoPessoa">Custo por diária</label>
           <div class="form-inline my-2 my-lg-0">
             <input name="custoPessoa" ngModel class="form-control mr-sm-2" type="number">
           </div>
         </div>
 
         <!-- aceitaAnimal -->
-        <div class="form-group marginPrincipal">
-          <label for="aceitaAnimal">aceitaAnimal</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="aceitaAnimal" ngModel class="form-control mr-sm-2" type="text">
-          </div>
+        <div class="custom-control custom-switch">
+          <input #box type="checkbox" class="custom-control-input" id="switch1" (change)="validacaoSwitch(box.checked)">
+          <label class="custom-control-label" ngModel for="switch1">aceita Animal</label>
         </div>
 
         <!--  Imagem -->
@@ -76,11 +74,12 @@
       <br>
 
       <!-- alerta de menssagem de cadastro com sucesso -->
-      <!--div *ngIf="validacao == true" class="alert alert-dismissible alert-success marginPrincipal">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>E-mail enviado com successo!</strong>
-  </div-->
-
+      <!--
+      <div *ngIf="validacao == true" class="alert alert-dismissible alert-success marginPrincipal">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>E-mail enviado com successo!</strong>
+      </div>
+      -->
     </div>
   </div>
 </div>
