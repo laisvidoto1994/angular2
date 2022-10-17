@@ -2,54 +2,53 @@
 <div class="imagemTopo">
   <h1>Dashboard</h1>
   <p>Visualize seus dados em Dashboard</p>
-  <p><a class="btn btn-primary btn-lg" routerLink="/dashboard">Siga</a></p>
+  <p><a class="btn btn-primary btn-lg" routerLink="/dashboard">Visualizar</a></p>
 </div>
 
 <br>
 <div class="marginPrincipal">
   <h1>Catalogo de Hospedagens</h1>
   <br>
-  <h4>Total de Receitas: {{produtos.length}}</h4>
+  <h4>Total de Hospedagens: {{produtos.length}}</h4>
   <br>
-  <form class="form-inline my-2 my-lg-0" #formularioTable="ngForm" (ngSubmit)="observar(formularioTable)">
 
+  <form class="form-inline my-2 my-lg-0" #formularioTable="ngForm" (ngSubmit)="pesquisarProdutos(formularioTable)">
     <!-- campo de busca de hotels pelo nome deles -->
     <input class="form-control mr-sm-2" type="search" name="nomeHospedagem" placeholder="Buscar por hotel" [(ngModel)]="searchText">
-    <button class="btn btn-primary my-2 my-sm-0" type="submit" (onclick)="observar(formularioTable)">Search</button>
-
+    <button class="btn btn-primary my-2 my-sm-0" type="submit" (onclick)="pesquisarProdutos(formularioTable)">Search</button>
     <div>{{ resultadoBusca }}</div>
   </form>
 
   <br>
-  <!-- Lista de produtos -->
+  <!-- Tabela com Lista de produtos -->
   <table class="table table-striped text-center">
     <thead>
       <tr class="table-primary">
-        <th>#</th>
-        <th>nome</th>
-        <th>tipo</th>
-        <th>responsável</th>
-        <th>contato</th>
-        <th>Custo por Pessoa</th>
-        <th>Aceita Animal</th>
-        <th>Ações</th>
+        <th scope="col" classe="tableAlinhamento">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Responsável</th>
+        <th scope="col">Contato</th>
+        <th scope="col">Custo por Pessoa</th>
+        <th scope="col">Aceita Animal</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr class="table-default" *ngFor="let produto of produtos">
-        <th>{{ produto.id }}</th>
-        <th>{{ produto.nomeHospedagem }}</th>
-        <th>{{ produto.tipo }}</th>
-        <th>{{ produto.gerenteHotel }}</th>
-        <th>{{ produto.contatoEmail }}</th>
-        <th>{{ produto.custoPessoa | currency:'BRL':true }}</th>
-        <th>{{ produto.aceitaAnimal }}</th>
+        <th scope="row" classe="tableAlinhamento">{{ produto.id }}</th>
+        <td>{{ produto.nomeHospedagem }}</td>
+        <td>{{ produto.tipo }}</td>
+        <td>{{ produto.gerenteHotel }}</td>
+        <td>{{ produto.contatoEmail }}</td>
+        <td>{{ produto.custoPessoa | currency:'BRL':true }}</td>
+        <td>{{ produto.aceitaAnimal }}</td>
         <td>
           <!-- passando produto por parametro da rota de table para á de details -->
-          <a [routerLink]="['/details', produto]" (click)="trazerCliente(produto.id, produto)" class="marginIcones">
+          <a [routerLink]="['/details', produto]" (click)="detalharProduto(produto.id, produto)" class="marginIcones">
             <i class="fas fa-info-circle fa-lg"></i>
           </a>
-          <a routerLink="/delete" #exclu (click)="deleteClient(produto.id, produto)" class="marginIcones">
+          <a routerLink="/delete" #exclu (click)="excluirProduto(produto.id, produto)" class="marginIcones">
             <i class="far fa-trash-alt fa-lg"></i>
           </a>
         </td>
