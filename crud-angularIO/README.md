@@ -7,7 +7,7 @@
 
 2º) abra outro terminal, e execulte o seguinte comando abaixo:
 
-#### json-server --watch dados.json
+#### npx json-server --watch dados.json
 
 3º) e por fim, no terminal, e execulte o seguinte comando abaixo:
 
