@@ -1,3 +1,6 @@
+
+<h1>Dashboard</h1>
+
 <!-- Doughnut (grafico chartJS) -->
 <div class="card border-primary mb-3 carde coluna">
   <div class="card-header">
@@ -9,7 +12,6 @@
   <!-- formatação de data da ultima extração dos dados na tela -->
   <div class="card-footer">{{formatacaoDataHora() | date:'dd/MM/yyyy, hh:mm aa' }}</div>
 </div>
-
 
 <!-- Bar (grafico chartJS) -->
 <div class="card border-primary mb-3 carde coluna">
@@ -35,7 +37,6 @@
   <div class="card-footer">{{formatacaoDataHora() | date:'dd/MM/yyyy, hh:mm aa' }}</div>
 </div>
 
-
 <!-- Line (grafico chartJS) -->
 <div class="card border-primary mb-3 carde coluna">
   <div class="card-header">
@@ -46,4 +47,61 @@
   </div>
   <!-- formatação de data da ultima extração dos dados na tela -->
   <div class="card-footer">{{formatacaoDataHora() | date:'dd/MM/yyyy, hh:mm aa' }}</div>
+</div>
+
+<!-- qtd. de Hospedagems totais -->
+<div class="card border-primary mb-3 carde coluna">
+  <div class="card-header">
+      <h4>Total</h4>
+  </div>
+  <div class="card-body">
+      <ul>
+          <li class="coluna">
+              <p class="card-text">Qtd. Registros</p>
+              <h4 class="card-title">{{produtos.length}}</h4>
+          </li>
+      </ul>
+  </div>
+  <div class="card-footer">{{formatacaoDataHora()  | date:'dd/MM/yyyy, hh:mm aa' }}</div>
+</div>
+
+<!-- qtd. de Hospedagems por Hotel -->
+<div class="card border-primary mb-3 carde coluna">
+  <div class="card-header">
+      <h4>Hotel</h4>
+  </div>
+  <div class="card-body">
+      <ul>
+          <li class="coluna">
+              <p class="card-text">Qtd. Registros</p>
+              <h4 class="card-title">{{contHotels}}</h4>
+          </li>
+          <li class="coluna">
+              <p class="card-text">Tipo</p>
+              <h4 class="card-title">Hotel</h4>
+          </li>
+      </ul>
+  </div>
+  <div class="card-footer">{{formatacaoDataHora()  | date:'dd/MM/yyyy, hh:mm aa' }}</div>
+</div>
+
+
+<!-- qtd. de Hospedagems por Flet -->
+<div class="card border-primary mb-3 carde coluna">
+  <div class="card-header">
+      <h4>Flet</h4>
+  </div>
+  <div class="card-body">
+      <ul>
+          <li class="coluna">
+              <p class="card-text">Qtd. Registros</p>
+              <h4 class="card-title">{{contflet}}</h4>
+          </li>
+          <li class="coluna">
+              <p class="card-text">Tipo</p>
+              <h4 class="card-title">Flet</h4>
+          </li>
+      </ul>
+  </div>
+  <div class="card-footer">{{formatacaoDataHora()  | date:'dd/MM/yyyy, hh:mm aa' }}</div>
 </div>
