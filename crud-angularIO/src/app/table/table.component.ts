@@ -10,6 +10,8 @@ export class TableComponent implements OnInit {
   // lista de produtos que vem do service
   produtos: any = [];
 
+  searchText: any = [];
+
   // paginação
   filteredTodos: any = [];
   currentPage = 1;
@@ -33,18 +35,26 @@ export class TableComponent implements OnInit {
   * botão de busca de dados pelo input
   */
   pesquisarProdutos(dado) {
-    console.log("digitado-> " + dado.value.nomeHospedagem);
     this.resultadoBusca = [];
 
     for (let index = 0; index < this.produtos.length; index++) {
-      if (this.produtos[index].nomeHospedagem === dado.value.nomeHospedagem) {
-        this.resultadoBusca = this.produtos[index].nomeHospedagem;
+      if (this.produtos[index].nomeHospedagem.includes(dado.value.nomeHospedagem) ) {
+        //this.resultadoBusca = this.produtos[index].nomeHospedagem +" R$"+ this.produtos[index].custoPessoa
+        this.resultadoBusca.push(this.produtos[index])
       }
     }
     if (this.resultadoBusca == "") {
       this.resultadoBusca = "Nenhum hotel foi encontrado com esse nome!";
     }
   }
+
+  limparProdutos(dado){
+    if (dado != "") {
+      this.resultadoBusca = [];
+    }
+    this.resultadoBusca = [];
+  }
+
 
   /*
   * Mostra TODOS os dados do json
@@ -53,6 +63,14 @@ export class TableComponent implements OnInit {
     this.crudService.read().subscribe(
       (data) => {
         this.produtos = data;
+        for (let index = 0; index < this.produtos.length; index++) {
+          const element = this.produtos[index];
+          if(element.aceitaAnimal == false){
+
+          }
+          else{}
+
+        }
       },
       (error) => {
         console.log(error);
@@ -85,6 +103,18 @@ export class TableComponent implements OnInit {
       },
       (error) => {
         console.log("ERROR: " + error);
+      }
+    );
+  }
+
+
+  alterarProduto(id, client){
+    this.crudService.search(id).subscribe(
+      (data) => {
+        this.produtos = data;
+      },
+      (error) => {
+        console.log(error);
       }
     );
   }
