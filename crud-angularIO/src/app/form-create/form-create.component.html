@@ -1,3 +1,4 @@
+
 <!-- Tela de Cadastro de novos produtos -->
 <div class="marginPrincipal">
 
@@ -6,83 +7,103 @@
     <div class="container">
       <form #f="ngForm" (ngSubmit)="cadastrar(f)">
 
-        <!-- nomeHospedagem -->
-        <div class="form-group marginPrincipal">
-          <label for="nomeHospedagem">Nome da Hospedagem</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="nomeHospedagem" ngModel class="form-control mr-sm-2" type="text">
+        <div class="flex-container">
+
+          <!-- nomeHospedagem -->
+          <div class="form-group marginPrincipal">
+            <label for="nomeHospedagem">Nome da Hospedagem</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="nomeHospedagem" ngModel class="form-control mr-sm-2" type="text" required>
+            </div>
+          </div>
+          <!--
+          <div id="campo" style="display:none;color:red">
+            * Campo Obrigatório
+          </div>
+          -->
+
+          <!-- tipo -->
+          <div class="form-group marginPrincipal">
+            <label for="tipo">Tipo</label>
+            <select id="tipo" class="form-control">
+              <option selected>selecione...</option>
+              <option>Hotel</option>
+              <option>Flat</option>
+            </select>
+          </div>
+
+          <!-- gerenteHotel -->
+          <div class="form-group marginPrincipal">
+            <label for="gerenteHotel">Nome do Gerente</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="gerenteHotel" ngModel class="form-control mr-sm-2" type="text">
+            </div>
           </div>
         </div>
 
-        <!-- tipo -->
-        <div class="form-group col-md-4">
-          <label for="tipo">Tipo</label>
-          <select id="tipo" class="form-control">
-            <option selected>selecione...</option>
-            <option>Hotel</option>
-            <option>Flat</option>
-          </select>
-        </div>
+        <div class="flex-container">
 
-        <!-- gerenteHotel -->
-        <div class="form-group marginPrincipal">
-          <label for="gerenteHotel">Nome do Gerente</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="gerenteHotel" ngModel class="form-control mr-sm-2" type="text">
+          <!-- contatoEmail -->
+          <div class="form-group marginPrincipal">
+            <label for="contatoEmail">E-mail</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="contatoEmail" ngModel class="form-control mr-sm-2" type="email">
+            </div>
           </div>
-        </div>
 
-        <!-- contatoEmail -->
-        <div class="form-group marginPrincipal">
-          <label for="contatoEmail">E-mail</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="contatoEmail" ngModel class="form-control mr-sm-2" type="email">
+          <!-- custoPessoa -->
+          <div class="form-group marginPrincipal">
+            <label for="custoPessoa">Custo por diária</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="custoPessoa" ngModel class="form-control mr-sm-2" type="number">
+            </div>
           </div>
-        </div>
 
-        <!-- custoPessoa -->
-        <div class="form-group marginPrincipal">
-          <label for="custoPessoa">Custo por diária</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="custoPessoa" ngModel class="form-control mr-sm-2" type="number">
+          <!-- aceitaAnimal -->
+          <div class="custom-control custom-switch espacoSwitch">
+            <input #box type="checkbox" class="custom-control-input" id="switch1" (change)="validacaoSwitch(box.checked)">
+            <label class="custom-control-label" ngModel for="switch1">aceita Animal</label>
           </div>
+
         </div>
 
-        <!-- aceitaAnimal -->
-        <div class="form-group marginPrincipal custom-control custom-switch">
-          <input #box type="checkbox" class="custom-control-input" id="switch1" (change)="validacaoSwitch(box.checked)">
-          <label class="custom-control-label" ngModel for="switch1">aceita Animal</label>
-        </div>
+        <div class="flex-container">
 
-        <!--  Imagem -->
-        <div class="form-group marginPrincipal">
-          <label for="imagem">Imagem</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input type="file" name="imagem" id="avatar" ngModel (change)="onChange($event)" #fileInput>
+          <!--  Imagem -->
+          <div class="form-group marginPrincipal">
+            <label for="imagem">Imagem</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input type="file" name="imagem" id="avatar" ngModel (change)="onChange($event)" #fileInput>
+            </div>
+            <ul class="form-inline my-2 my-lg-0">
+              <li *ngFor="let f of files">{{ f.name }}
+              </li>
+            </ul>
           </div>
-          <ul class="form-inline my-2 my-lg-0">
-            <li *ngFor="let f of files">{{ f.name }}
-            </li>
-          </ul>
+
         </div>
 
         <!-- botão de cadastro -->
-        <div class="form-group marginPrincipal">
-          <button type="submit" class="btn btn-outline-danger" (onclick)="cadastrar(f)" data-toggle="modal" data-target="#exampleModalCenter">Cadastrar</button>
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-danger espacamentoBotao" (onclick)="cadastrar(f)" data-toggle="modal" data-target="#exampleModalCenter" >Cadastrar</button>
+          <button type="submit" class="btn btn-outline-danger espacamentoBotao" (onclick)="voltar(f)" data-toggle="modal" data-target="#exampleModal" routerLink="">Voltar</button>
         </div>
+
       </form>
-      <br>
 
       <!-- alerta de menssagem de cadastro com sucesso -->
-      <!--
       <div *ngIf="validacao == true" class="alert alert-dismissible alert-success marginPrincipal">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>E-mail enviado com successo!</strong>
+        <strong>Hospedagem cadastrado com successo!</strong>
       </div>
-      -->
+
     </div>
   </div>
 </div>
 
 <!-- chamada do modal -->
-<app-modal></app-modal>
+<!--
+<app-modal
+  [operacao]="operacao">
+</app-modal>
+-->
