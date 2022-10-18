@@ -1,12 +1,12 @@
-### Projeto - Catalogo de Hospedagens
+# Projeto - Catalogo de Hospedagens
 
  
-## Observação:
-Projeto desenvolido em-> [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
-Armazenamento de dados locamente, utilizando a [API JSON-SERVER](https://github.com/typicode/json-server).
-chart.js -> é do chartjs
-ng2-google-charts -> charts do google 
-Framework de estilo-> [Bootswatch](https://bootswatch.com/).
+### Observação:
+#### Projeto desenvolido em-> [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
+#### Armazenamento de dados locamente, utilizando a [API JSON-SERVER](https://github.com/typicode/json-server).
+#### chart.js -> é do chartjs
+#### ng2-google-charts -> charts do google 
+#### Framework de estilo-> [Bootswatch](https://bootswatch.com/).
 
 ### Passos para executar o projeto:
 
