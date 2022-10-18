@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from '../../crud.service';
 import { TestBed } from '@angular/core/testing';
@@ -11,6 +11,8 @@ import { TestBed } from '@angular/core/testing';
 
 export class FormCreateComponent {
 
+  //@Input('operacao') operacao: string;
+
   router: Router;
   validacao: boolean = false;
   files: FileList;
@@ -18,6 +20,10 @@ export class FormCreateComponent {
 
   constructor(public crudService: CrudService, router: Router) {
     this.router = router;
+  }
+
+  operacao(evento){
+    console.log(evento)
   }
 
   onChange(evt) {
@@ -42,17 +48,22 @@ export class FormCreateComponent {
 
   /* funcao de cadastro de novos produtos */
   cadastrar(form) {
-
     let teste = form.value;
 
-   // console.log(teste);
-    //console.log(teste.imagem);
+    if(teste.aceitaAnimal == true){
+      teste.aceitaAnimal = "Sim"
+    }
+    else if(teste.aceitaAnimal == false){
+      teste.aceitaAnimal = "Não"
+    }
+    else{
+      teste.aceitaAnimal = "Não"
+    }
 
     teste.imagem = this.base64textString;
 
     this.crudService.create(teste).subscribe(
       data => {
-        console.log(data);
         //mostrar o alert da menssagem
         this.validacao = true;
         //navegue até á pagina inicial
@@ -62,7 +73,6 @@ export class FormCreateComponent {
         console.log(error);
       }
     );
-
   }
 
   /* função de redirecionamento para pagina inicial */
@@ -81,5 +91,9 @@ export class FormCreateComponent {
      else{
 
      }
+  }
+
+  voltar(){
+
   }
 }
