@@ -1,8 +1,8 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { CrudService } from '../../crud.service';
 //import { Subscription } from 'rxjs/Rx';
 
-import { CrudService } from "../../crud.service";
 
 @Component({
   selector: 'details-component',
@@ -16,7 +16,9 @@ export class DetailsComponent implements OnInit {
   detalheProd: any;
 
   /* ActivatedRoute-> rota ativa, para obter os detalhes da rota, inclusive os parametros */
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    public crudService: CrudService) {
     //this.detalheProd = this.route.snapshot.params;/* obtendo os parametros da rota */
   }
 
@@ -48,8 +50,20 @@ export class DetailsComponent implements OnInit {
   /*
   * atualizar dados cadastrados para o atual
   */
-  atualizar(formulario) {
+  atualizar(id, client) {
     //console.log("atualizado-> " + formulario);
-  }
+    this.crudService.update(id, client).subscribe(
+      (data) => {
+        console.log(data);
 
+      },
+      (error) => {
+        console.log("ERROR: " + error);
+      }
+    );
+  }
+  
+  voltar(){
+
+  }
 }
