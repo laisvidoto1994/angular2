@@ -1,53 +1,52 @@
-<div class="jumbotron">
-  <h1></h1>
-</div>
 
-<br>
-<h3>Entre em contato conosco</h3>
-<br>
+<div class="marginPrincipal">
+  <h1 class="marginPrincipal">Entre em contato conosco</h1>
+  <div class="wrapper">
+    <div class="container">
+      <form #f="ngForm" (ngSubmit)="enviarDado(f)">
 
-<div class="wrapper">
-  <div class="container">
+        <div class="flex-container">
 
-    <form #f="ngForm" (ngSubmit)="enviarDado(f)">
+          <!-- nome do cliente -->
+          <div class="form-group marginPrincipal">
+            <label for="nome">Nome</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+            </div>
+          </div>
 
-      <!-- nome do cliente -->
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="nome" ngModel class="form-control mr-sm-2" type="text">
+          <!-- e-mail -->
+          <div class="form-group marginPrincipal">
+            <label for="email">E-mail</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="email" ngModel class="form-control mr-sm-2" type="email">
+            </div>
+          </div>
+
         </div>
-      </div>
 
-      <!-- e-mail -->
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <div class="form-inline my-2 my-lg-0">
-          <input name="email" ngModel class="form-control mr-sm-2" type="email">
+        <!-- texto do contato -->
+        <div class="form-group marginPrincipal">
+          <label for="textarea">Observação:</label>
+          <div class="form-inline my-2 my-lg-0">
+            <textarea name="textarea" class="form-control" ngModel rows="10" cols="50"></textarea>
+          </div>
         </div>
-      </div>
+        <br>
 
-      <!-- texto do contato -->
-      <div class="form-group">
-        <label for="textarea">Observação:</label>
-        <div class="form-inline my-2 my-lg-0">
-          <textarea name="textarea" class="form-control" ngModel rows="10" cols="50"></textarea>
+        <!-- botão de cadastro -->
+        <div class="form-group marginPrincipal">
+          <button type="submit" class="btn btn-outline-primary" (onclick)="enviarDado(f)">Enviar</button>
         </div>
+
+      </form>
+
+      <!-- alerta de menssagem de cadastro com sucesso -->
+      <div *ngIf="validacao == true" class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Contato enviado com successo!</strong>
       </div>
-      <br>
 
-      <!-- botão de cadastro -->
-      <div class="form-group">
-        <button type="submit" class="btn btn-outline-primary" (onclick)="enviarDado(f)">Enviar</button>
-      </div>
-
-    </form>
-
-    <!-- alerta de menssagem de cadastro com sucesso -->
-    <div *ngIf="validacao == true" class="alert alert-dismissible alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Cadastro realizado com successo!</strong>
     </div>
-
   </div>
 </div>
