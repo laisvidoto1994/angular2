@@ -30,23 +30,30 @@ Os dados foram armazenados locamente utilizando a [API JSON-SERVER](https://gith
 
 Para estilizar as páginas foi utilizado o Framework [Bootswatch](https://bootswatch.com/).
 
+
 #### Tela Principal
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Principal.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Principal.png)
 
+#### Tela Principal com filtro
+
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-PrincipalComBusca.png)
 
 #### Tela Cadastro
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-CadastroPreenchida.PNG)
-
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-CadastroPreenchida.png)
 
 #### Tela Detalhe
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Detalhe.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Principal.png)
 
 #### Tela Dashboard
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Dashboard.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Dashboard.png)
+
+#### Tela Contato
+
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-ContatoPreenchida.png)
 
 
 
