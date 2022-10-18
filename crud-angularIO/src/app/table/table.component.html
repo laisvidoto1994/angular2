@@ -14,64 +14,74 @@
 
   <form class="form-inline my-2 my-lg-0" #formularioTable="ngForm" (ngSubmit)="pesquisarProdutos(formularioTable)">
     <!-- campo de busca de hotels pelo nome deles -->
-    <input class="form-control mr-sm-2" type="search" name="nomeHospedagem" placeholder="Buscar por hotel" [(ngModel)]="searchText">
-    <button class="btn btn-primary my-2 my-sm-0" type="submit" (onclick)="pesquisarProdutos(formularioTable)">Search</button>
-    <div>{{ resultadoBusca }}</div>
-  </form>
+    <input class="form-control mr-sm-2" type="search" name="nomeHospedagem" placeholder="Buscar Nome de Hospedagem" [(ngModel)]="searchText">
+    <button class="btn btn-primary my-2 my-sm-0" type="submit" (onclick)="pesquisarProdutos(formularioTable)">Pesquisar</button>
+    <button class="btn btn-secundary my-2 my-sm-0" type="reset" (onclick)="limparProdutos(resultadoBusca)">Limpar</button>
+    <div class="espacamentoTexto" *ngFor="let resultadoBuscas of resultadoBusca">
+      <span class="row">{{ resultadoBuscas.nomeHospedagem }} R${{ resultadoBuscas.custoPessoa }}</span>
+    </div>
 
   <br>
   <!-- Tabela com Lista de produtos -->
-  <table class="table table-striped text-center">
-    <thead>
-      <tr class="table-primary">
-        <th scope="col" classe="tableAlinhamento">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Responsável</th>
-        <th scope="col">Contato</th>
-        <th scope="col">Custo por Pessoa</th>
-        <th scope="col">Aceita Animal</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-default" *ngFor="let produto of produtos">
-        <th scope="row" classe="tableAlinhamento">{{ produto.id }}</th>
-        <td>{{ produto.nomeHospedagem }}</td>
-        <td>{{ produto.tipo }}</td>
-        <td>{{ produto.gerenteHotel }}</td>
-        <td>{{ produto.contatoEmail }}</td>
-        <td>{{ produto.custoPessoa | currency:'BRL':true }}</td>
-        <td>{{ produto.aceitaAnimal }}</td>
-        <td>
-          <!-- passando produto por parametro da rota de table para á de details -->
-          <a [routerLink]="['/details', produto]" (click)="detalharProduto(produto.id, produto)" class="marginIcones">
-            <i class="fas fa-info-circle fa-lg"></i>
-          </a>
-          <a routerLink="/delete" #exclu (click)="excluirProduto(produto.id, produto)" class="marginIcones">
-            <i class="far fa-trash-alt fa-lg"></i>
-          </a>
-        </td>
-      </tr>
-      <br>
+  <div class="row">
+    <table class="table table-striped text-center tableAlinhamento" >
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Responsável</th>
+          <th scope="col">Contato</th>
+          <th scope="col">Custo por Diária</th>
+          <th scope="col">Aceita Animal</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-default" *ngFor="let produto of produtos">
+          <th scope="row" classe="tableAlinhamento">{{ produto.id }}</th>
+          <td>{{ produto.nomeHospedagem }}</td>
+          <td>{{ produto.tipo }}</td>
+          <td>{{ produto.gerenteHotel }}</td>
+          <td>{{ produto.contatoEmail }}</td>
+          <td>{{ produto.custoPessoa | currency:'BRL':true }}</td>
+          <td>{{ produto.aceitaAnimal }}</td>
+          <td>
+            <!--
+            <a [routerLink]="['/alterar', produto]" (click)="alterarProduto(produto.id, produto)" class="marginIcones" >
+              <i class="fas fa-pencil fa-lg"></i>
+            </a>
+            -->
 
-      <!-- Paginação da table -->
-      <ul class="pagination">
-        <li class="page-item disabled">
-          <a class="page-link" href="#">&laquo;</a>
-        </li>
-        <li class="page-item active" *ngFor="let produto of produtos; let i = index">
-          <a class="page-link" href="#">{{i+1}}</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">&raquo;</a>
-        </li>
-      </ul>
+            <a [routerLink]="['/details', produto]" (click)="detalharProduto(produto.id, produto)" class="marginIcones">
+              <i class="fas fa-info-circle fa-lg"></i>
+            </a>
+            <a routerLink="/delete" #exclu (click)="excluirProduto(produto.id, produto)" class="marginIcones">
+              <i class="far fa-trash-alt fa-lg"></i>
+            </a>
+          </td>
+        </tr>
+        <br>
 
-    </tbody>
-  </table>
+        <!-- Paginação da table -->
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link" href="#">&laquo;</a>
+          </li>
+          <li class="page-item active" *ngFor="let produto of produtos; let i = index">
+            <a class="page-link" href="#">{{i+1}}</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">&raquo;</a>
+          </li>
+        </ul>
+
+      </tbody>
+    </table>
+  </div>
   <br>
 
+</form>
   <!-- alerta de menssagem de excluído com sucesso -->
   <div *ngIf="excluirValidacao == true" class="alert alert-dismissible alert-success">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
