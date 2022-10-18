@@ -28,6 +28,9 @@ export class GraficoComponent implements OnInit {
     "rgba(255,159,64,1)",
   ];
 
+   contHotels = 0;
+   contflet = 0;
+
   constructor(public crudService: CrudService) {}
 
   ngOnInit() {
@@ -43,23 +46,20 @@ export class GraficoComponent implements OnInit {
     this.crudService.read().subscribe(
       (data) => {
         this.produtos = data;
-        var contHotels = 0;
-        var contflet = 0;
 
         for (let index = 0; index < this.produtos.length; index++) {
           const element = this.produtos[index];
-          if (element.tipo == "flet") {
-            console.log(element);
-            contflet++;
-          } else if (element.tipo == "hotel") {
-            contHotels++;
+          if (element.tipo == "Flet") {
+            this.contflet++;
+          } else if (element.tipo == "Hotel") {
+            this.contHotels++;
           }
         }
 
-        this.carregamentoGraficoTipoDoughnut(contflet, contHotels);
-        this.carregamentoGraficoTipoPie(contflet, contHotels);
-        this.carregamentoGraficoTipoBar(contflet, contHotels);
-        this.carregamentoGraficoTipoLine(contflet, contHotels);
+        this.carregamentoGraficoTipoDoughnut(this.contflet, this.contHotels);
+        this.carregamentoGraficoTipoPie(this.contflet, this.contHotels);
+        this.carregamentoGraficoTipoBar(this.contflet, this.contHotels);
+        this.carregamentoGraficoTipoLine(this.contflet, this.contHotels);
       },
       (error) => {
         console.log(error);
