@@ -7,5 +7,19 @@
 .marginPrincipal {
     margin: 20px;
 }
- 
- 
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  margin: 10px;
+}
+
+.espacamentoBotao{
+  margin: 10px;
+}
+
+.espacoSwitch{
+  padding: 30px;
+}
