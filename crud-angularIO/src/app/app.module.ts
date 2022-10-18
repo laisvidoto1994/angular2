@@ -60,6 +60,14 @@ import { ModalComponent } from './modal/modal.component';
           component: DetailsComponent
         },
         {
+          path: 'alterar/',// quando á requisição for /alterar e passar o id por parametro
+          component: DetailsComponent
+        },
+        {
+          path: 'alterar/:produto',// quando á requisição for /alterar e passar o id por parametro
+          component: DetailsComponent
+        },
+        {
           path: 'dashboard',// quando á requisição for /dashboard sem parametros
           component: GraficoComponent
         },
