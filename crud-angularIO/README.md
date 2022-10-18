@@ -32,21 +32,21 @@ Para estilizar as páginas foi utilizado o Framework [Bootswatch](https://bootsw
 
 #### Tela Principal
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/inicial.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Principal.PNG)
 
 
 #### Tela Cadastro
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/cadastro.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-CadastroPreenchida.PNG)
 
 
 #### Tela Detalhe
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/update.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Detalhe.PNG)
 
 #### Tela Dashboard
 
-![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/Dashboard.PNG)
+![image](https://github.com/laisvidoto1994/angular2/blob/master/imagens%20das%20telas/crud/tela-Dashboard.PNG)
 
 
 
