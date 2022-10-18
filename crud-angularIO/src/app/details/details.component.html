@@ -1,80 +1,109 @@
-<div class="espacamentoPrincipal">
-  <h1 class="titulo">Detalhe</h1>
+
+<div class="marginPrincipal">
+  <h1 class="marginPrincipal">Detalhe</h1>
   <div class="wrapper">
     <div class="container">
 
       <form #f="ngForm" (ngSubmit)="atualizar(f)">
 
         <!-- switch -->
+        <!--
         <div class="custom-control custom-switch">
           <input #box type="checkbox" class="custom-control-input" id="switch1" (change)="validacaoSwitch(box.checked)">
           <label class="custom-control-label" for="switch1">editar</label>
         </div>
         <br>
+        -->
 
-        <!-- nome -->
-        <div class="form-group">
-          <label for="nomeHospedagem">Nome da Hospedagem</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="nomeHospedagem" [(ngModel)]="detalheProd.nomeHospedagem" class="form-control mr-sm-2" type="text"
-              [disabled]="!box.checked == true">
+        <div class="flex-container">
+
+          <!-- id -->
+          <div class="form-group marginPrincipal">
+            <label for="id">codigo da Hospedagem</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="id" [(ngModel)]="detalheProd.id" class="form-control mr-sm-2" type="text"
+                [disabled]="true">
+            </div>
+          </div>
+
+          <!-- nome -->
+          <div class="form-group marginPrincipal">
+            <label for="nomeHospedagem">Nome da Hospedagem</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="nomeHospedagem" [(ngModel)]="detalheProd.nomeHospedagem" class="form-control mr-sm-2" type="text"
+                [disabled]=true>
+            </div>
+          </div>
+
+          <!-- tipo -->
+          <div class="form-group marginPrincipal">
+            <label for="tipo">Tipo</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="tipo" [(ngModel)]="detalheProd.tipo" class="form-control mr-sm-2" type="text" [disabled]=true>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex-container">
+
+          <!--  gerente -->
+          <div class="form-group marginPrincipal">
+            <label for="gerenteHotel">Nome do Gerente</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="gerenteHotel" [(ngModel)]="detalheProd.gerenteHotel" class="form-control mr-sm-2" type="text"
+                [disabled]=true>
+            </div>
+          </div>
+
+          <!--  e-mail -->
+          <div class="form-group marginPrincipal">
+            <label for="contatoEmail">E-mail</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="contatoEmail" [(ngModel)]="detalheProd.contatoEmail" class="form-control mr-sm-2" type="email"
+                [disabled]=true>
+            </div>
+          </div>
+
+          <!--  custo -->
+          <div class="form-group marginPrincipal">
+            <label for="custoPessoa">Custo por Diária</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="custoPessoa" [(ngModel)]="detalheProd.custoPessoa" class="form-control mr-sm-2" type="number"
+              placeholder="0.00" [disabled]=true>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex-container">
+          <!--  aceitaAnimal -->
+          <div class="form-group marginPrincipal">
+            <label for="aceitaAnimal">Aceita Animal?</label>
+            <div class="form-inline my-2 my-lg-0">
+              <input name="aceitaAnimal" [(ngModel)]="detalheProd.aceitaAnimal" class="form-control mr-sm-2" type="text"
+                [disabled]=true>
+            </div>
           </div>
         </div>
 
-        <!-- tipo -->
-        <div class="form-group">
-          <label for="tipo">Tipo</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="tipo" [(ngModel)]="detalheProd.tipo" class="form-control mr-sm-2" type="text" [disabled]="!box.checked == true">
-          </div>
-        </div>
+        <div class="flex-container">
 
-        <!--  gerente -->
-        <div class="form-group">
-          <label for="gerenteHotel">Nome do Gerente</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="gerenteHotel" [(ngModel)]="detalheProd.gerenteHotel" class="form-control mr-sm-2" type="text"
-              [disabled]="!box.checked == true">
+          <!--  Imagem -->
+          <div class="form-group marginPrincipal">
+            <div class="form-inline my-2 my-lg-0">
+              <img src="{{detalheProd.imagem}}" alt="imagem">
+            </div>
           </div>
-        </div>
 
-        <!--  e-mail -->
-        <div class="form-group">
-          <label for="contatoEmail">E-mail</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="contatoEmail" [(ngModel)]="detalheProd.contatoEmail" class="form-control mr-sm-2" type="email"
-              [disabled]="!box.checked == true">
-          </div>
-        </div>
-
-        <!--  custo -->
-        <div class="form-group">
-          <label for="custoPessoa">Custo por Diária</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="custoPessoa" [(ngModel)]="detalheProd.custoPessoa" class="form-control mr-sm-2" type="number"
-              [disabled]="!box.checked == true">
-          </div>
-        </div>
-
-        <!--  aceitaAnimal -->
-        <div class="form-group">
-          <label for="aceitaAnimal">Aceita Animal?</label>
-          <div class="form-inline my-2 my-lg-0">
-            <input name="aceitaAnimal" [(ngModel)]="detalheProd.aceitaAnimal" class="form-control mr-sm-2" type="text"
-              [disabled]="!box.checked == true">
-          </div>
-        </div>
-
-        <!--  Imagem -->
-        <div class="form-group">
-          <div class="form-inline my-2 my-lg-0">
-            <img src="{{detalheProd.imagem}}" alt="imagem">
-          </div>
         </div>
 
         <!-- botão de atualizar -->
-        <div class="form-group marginPrincipal" *ngIf="!box.checked == false">
-          <button type="submit" class="btn btn-outline-danger" (onclick)="atualizar(f)" data-toggle="modal">Atualizar</button>
+        <div class="form-group " >
+          <!--
+             <button type="submit" class="btn btn-outline-danger espacamentoBotao" (onclick)="atualizar(detalheProd.id,f)" data-toggle="modal" [disabled]=true>Atualizar</button>
+            -->
+         <button type="submit" class="btn btn-outline-danger espacamentoBotao" (onclick)="voltar(f)" data-toggle="modal" data-target="#exampleModal" routerLink="">Voltar</button>
         </div>
 
       </form>
