@@ -1,0 +1,11 @@
+.marginPrincipal {
+  margin: 20px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  margin: 10px;
+}
